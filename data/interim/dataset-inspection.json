@@ -1,0 +1,469 @@
+{
+  "data_root": "D:\\COLLEGE\\SEM 5\\Research Method\\CarbonHardware\\data\\raw",
+  "sources": {
+    "scarif": {
+      "path": "D:\\COLLEGE\\SEM 5\\Research Method\\CarbonHardware\\data\\raw\\scarif",
+      "available": false,
+      "supported_files": [],
+      "file_reports": [],
+      "limitation": "No supported local CSV or Excel files were found."
+    },
+    "carbonset": {
+      "path": "D:\\COLLEGE\\SEM 5\\Research Method\\CarbonHardware\\data\\raw\\carbonset",
+      "available": true,
+      "supported_files": [
+        "D:\\COLLEGE\\SEM 5\\Research Method\\CarbonHardware\\data\\raw\\carbonset\\CarbonSet.csv"
+      ],
+      "file_reports": [
+        {
+          "source": "D:\\COLLEGE\\SEM 5\\Research Method\\CarbonHardware\\data\\raw\\carbonset\\CarbonSet.csv",
+          "sheet": null,
+          "rows": 1320,
+          "columns": [
+            "Product",
+            "Type",
+            "Release Date",
+            "Process Size (nm)",
+            "TDP (W)",
+            "DieSizeValue",
+            "Die Size (mm^2)",
+            "Vendor",
+            "#dies",
+            "Avg Die Area",
+            "Emb_Carbon_Min",
+            "Ope_Carbon_Min",
+            "Tot_Carbon_Min",
+            "Emb_Carbon_Max",
+            "Ope_Carbon_Max",
+            "Tot_Carbon_Max",
+            "Emb_Carbon_Mean",
+            "Ope_Carbon_Mean",
+            "Tot_Carbon_Mean"
+          ],
+          "duplicate_rows": 17,
+          "candidate_targets": [
+            {
+              "column": "Emb_Carbon_Min",
+              "matched_terms": [
+                "emb carbon"
+              ],
+              "status": "candidate only; verify definition and unit"
+            },
+            {
+              "column": "Emb_Carbon_Max",
+              "matched_terms": [
+                "emb carbon"
+              ],
+              "status": "candidate only; verify definition and unit"
+            },
+            {
+              "column": "Emb_Carbon_Mean",
+              "matched_terms": [
+                "emb carbon"
+              ],
+              "status": "candidate only; verify definition and unit"
+            }
+          ],
+          "column_profiles": [
+            {
+              "name": "Product",
+              "dtype": "str",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 1272,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {},
+              "top_values": [
+                {
+                  "value": "AMD Radeon R5 Mobile Graphics",
+                  "count": 4
+                },
+                {
+                  "value": "AMD Radeon R7 250",
+                  "count": 3
+                },
+                {
+                  "value": "AMD Radeon R4 Mobile Graphics",
+                  "count": 3
+                },
+                {
+                  "value": "AMD Radeon R5 Graphics",
+                  "count": 3
+                },
+                {
+                  "value": "AMD Radeon RX 560X Mobile",
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "name": "Type",
+              "dtype": "str",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 2,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {},
+              "top_values": [
+                {
+                  "value": "CPU",
+                  "count": 741
+                },
+                {
+                  "value": "GPU",
+                  "count": 579
+                }
+              ]
+            },
+            {
+              "name": "Release Date",
+              "dtype": "str",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 389,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {},
+              "top_values": [
+                {
+                  "value": "2013-09-01",
+                  "count": 58
+                },
+                {
+                  "value": "2014-09-08",
+                  "count": 49
+                },
+                {
+                  "value": "2023-12-14",
+                  "count": 32
+                },
+                {
+                  "value": "2024-01-08",
+                  "count": 26
+                },
+                {
+                  "value": "2015-06-01",
+                  "count": 22
+                }
+              ]
+            },
+            {
+              "name": "Process Size (nm)",
+              "dtype": "float64",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 5,
+              "unit_token_candidates": [
+                "nm"
+              ],
+              "descriptive_statistics": {
+                "count": 1320.0,
+                "mean": 17.62727272727273,
+                "std": 7.748443468226498,
+                "min": 7.0,
+                "25%": 10.0,
+                "50%": 14.0,
+                "75%": 28.0,
+                "max": 28.0
+              }
+            },
+            {
+              "name": "TDP (W)",
+              "dtype": "float64",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 112,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {
+                "count": 1320.0,
+                "mean": 105.79848484848485,
+                "std": 110.16961351917386,
+                "min": 2.0,
+                "25%": 40.0,
+                "50%": 65.0,
+                "75%": 140.0,
+                "max": 2400.0
+              }
+            },
+            {
+              "name": "DieSizeValue",
+              "dtype": "float64",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 102,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {
+                "count": 1320.0,
+                "mean": 257.2997272727273,
+                "std": 233.62164534594916,
+                "min": 50.0,
+                "25%": 125.75,
+                "50%": 182.0,
+                "75%": 294.0,
+                "max": 1526.0
+              }
+            },
+            {
+              "name": "Die Size (mm^2)",
+              "dtype": "str",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 103,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {},
+              "top_values": [
+                {
+                  "value": "160.0",
+                  "count": 68
+                },
+                {
+                  "value": "356.0",
+                  "count": 64
+                },
+                {
+                  "value": "123.0",
+                  "count": 63
+                },
+                {
+                  "value": "74.0",
+                  "count": 52
+                },
+                {
+                  "value": "118.0",
+                  "count": 50
+                }
+              ]
+            },
+            {
+              "name": "Vendor",
+              "dtype": "str",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 3,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {},
+              "top_values": [
+                {
+                  "value": "AMD",
+                  "count": 561
+                },
+                {
+                  "value": "Intel",
+                  "count": 539
+                },
+                {
+                  "value": "NVIDIA",
+                  "count": 220
+                }
+              ]
+            },
+            {
+              "name": "#dies",
+              "dtype": "int64",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 4,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {
+                "count": 1320.0,
+                "mean": 1.096969696969697,
+                "std": 0.6443243069884158,
+                "min": 1.0,
+                "25%": 1.0,
+                "50%": 1.0,
+                "75%": 1.0,
+                "max": 8.0
+              }
+            },
+            {
+              "name": "Avg Die Area",
+              "dtype": "float64",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 97,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {
+                "count": 1320.0,
+                "mean": 237.16033333333334,
+                "std": 170.5363117857691,
+                "min": 50.0,
+                "25%": 123.0,
+                "50%": 180.3,
+                "75%": 276.0,
+                "max": 1280.0
+              }
+            },
+            {
+              "name": "Emb_Carbon_Min",
+              "dtype": "float64",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 114,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {
+                "count": 1320.0,
+                "mean": 3.7622269688636365,
+                "std": 6.470807981476427,
+                "min": 0.3817033999999999,
+                "25%": 1.2056462300000002,
+                "50%": 2.121222025,
+                "75%": 3.32998336,
+                "max": 36.92802752
+              }
+            },
+            {
+              "name": "Ope_Carbon_Min",
+              "dtype": "float64",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 225,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {
+                "count": 1320.0,
+                "mean": 60.127331224977276,
+                "std": 70.15480400946043,
+                "min": 1.00073782,
+                "25%": 21.15684579,
+                "50%": 39.29128503,
+                "75%": 80.7584843,
+                "max": 1604.42952523
+              }
+            },
+            {
+              "name": "Tot_Carbon_Min",
+              "dtype": "float64",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 464,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {
+                "count": 1320.0,
+                "mean": 63.88955819462121,
+                "std": 74.25200511403887,
+                "min": 1.78544698,
+                "25%": 23.09281601,
+                "50%": 41.40298775,
+                "75%": 83.69682241,
+                "max": 1638.04184678
+              }
+            },
+            {
+              "name": "Emb_Carbon_Max",
+              "dtype": "float64",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 114,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {
+                "count": 1320.0,
+                "mean": 19.323478795249997,
+                "std": 65.77849997862613,
+                "min": 0.72742351,
+                "25%": 2.4595105900000003,
+                "50%": 5.455792560000001,
+                "75%": 8.82867068,
+                "max": 850.20271812
+              }
+            },
+            {
+              "name": "Ope_Carbon_Max",
+              "dtype": "float64",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 225,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {
+                "count": 1320.0,
+                "mean": 68.1045176963106,
+                "std": 79.46235087801418,
+                "min": 1.13350726,
+                "25%": 23.96375739,
+                "50%": 44.50412088,
+                "75%": 91.47283791,
+                "max": 1817.29168363
+              }
+            },
+            {
+              "name": "Tot_Carbon_Max",
+              "dtype": "float64",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 464,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {
+                "count": 1320.0,
+                "mean": 87.42799649045453,
+                "std": 131.3018846718881,
+                "min": 2.74842261,
+                "25%": 28.12348024,
+                "50%": 49.95991344,
+                "75%": 101.69317796,
+                "max": 2667.49440175
+              }
+            },
+            {
+              "name": "Emb_Carbon_Mean",
+              "dtype": "float64",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 114,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {
+                "count": 1320.0,
+                "mean": 6.308820915179865,
+                "std": 13.61325493774189,
+                "min": 0.5035836068890001,
+                "25%": 1.5900377566440005,
+                "50%": 2.962489710833,
+                "75%": 4.915142062046001,
+                "max": 117.93701016309
+              }
+            },
+            {
+              "name": "Ope_Carbon_Mean",
+              "dtype": "float64",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 225,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {
+                "count": 1320.0,
+                "mean": 65.16559353591352,
+                "std": 76.03330049005994,
+                "min": 1.084592853886,
+                "25%": 22.929645885179,
+                "50%": 42.58362807421,
+                "75%": 87.525497227921,
+                "max": 1738.8698312151048
+              }
+            },
+            {
+              "name": "Tot_Carbon_Mean",
+              "dtype": "float64",
+              "missing_count": 0,
+              "missing_fraction": 0.0,
+              "unique_count": 464,
+              "unit_token_candidates": [],
+              "descriptive_statistics": {
+                "count": 1320.0,
+                "mean": 71.4744144510934,
+                "std": 85.31925857802106,
+                "min": 2.133826668017,
+                "25%": 25.398557420439502,
+                "50%": 45.573052029601,
+                "75%": 91.341296035241,
+                "max": 1856.8068413781948
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "environmental": {
+      "path": "D:\\COLLEGE\\SEM 5\\Research Method\\CarbonHardware\\data\\raw\\environmental",
+      "available": false,
+      "supported_files": [],
+      "file_reports": [],
+      "limitation": "No supported local CSV or Excel files were found."
+    }
+  }
+}

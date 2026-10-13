@@ -1,0 +1,49 @@
+{
+  "status": "prepared",
+  "source": "carbonset",
+  "seed": 42,
+  "target": {
+    "column": "Emb_Carbon_Mean",
+    "unit": "kg_co2e",
+    "definition": "Mean embodied carbon from ECO-CHIP probabilistic processor CFP model; lifecycle CFP in kg CO2 eq.; mean of 10,000 simulations"
+  },
+  "cleaning": [
+    {
+      "source_id": "carbonset:CarbonSet.csv",
+      "initial_rows": 1320,
+      "removed_empty_rows": 0,
+      "removed_exact_duplicates": 17,
+      "removed_invalid_or_missing_targets": 0,
+      "removed_rows_missing_features": 0,
+      "target_column": "Emb_Carbon_Mean",
+      "target_unit": "kg_co2e",
+      "target_source_unit": "kg_co2e",
+      "feature_columns": [
+        "Process Size (nm)",
+        "TDP (W)",
+        "DieSizeValue",
+        "#dies",
+        "Avg Die Area"
+      ],
+      "group_column": "Product",
+      "final_rows": 1303,
+      "imputation": "none; rows with required missing values were excluded"
+    }
+  ],
+  "features": {
+    "feature_columns": [
+      "Process Size (nm)",
+      "TDP (W)",
+      "DieSizeValue",
+      "#dies",
+      "Avg Die Area"
+    ],
+    "transformations": "numeric hardware columns retained without scaling or imputation"
+  },
+  "split_strategy": "GroupShuffleSplit twice; hardware groups are disjoint across train/validation/test",
+  "rows": {
+    "train": 776,
+    "validation": 261,
+    "test": 266
+  }
+}
