@@ -20,6 +20,12 @@ No e-waste mass is converted to carbon, and no carbon result is counted as waste
 
 The current validated model uses CarbonSet's `Emb_Carbon_Mean` in `kg CO2e`, based on the supplied CarbonSet paper (arXiv:2506.10373v1). The paper describes this as a mean from 10,000 ECO-CHIP simulations across the modeled lifecycle. This is modeled output, not a direct measurement. The Phase 4 model is an experimental Random Forest estimator and is not claimed to reproduce SCARIF.
 
+### Custom-PC inventory
+
+`custom_pc.py` accounts for a custom PC as an explicit bill of materials: CPU, GPU, RAM, storage, motherboard, PSU, case, cooling, or other supplied component types. It has no built-in factors. Populate `data/embodied-carbon-factors.template.csv` only with verified, source-backed values, retaining the source, functional unit, and lifecycle boundary for each record.
+
+The calculator reports a final `total_kg_co2e` only if every requested component has a matching factor. Otherwise it reports the resolved subtotal and an `unresolved` entry for each missing component. A proxy is permitted only when explicitly selected and of the same component type; the output labels it `explicit_proxy_factor`. This prevents an A100-specific LCA value from silently becoming a generic GPU factor.
+
 ## Operational Carbon
 
 The implemented equation is:

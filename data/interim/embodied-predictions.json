@@ -1,0 +1,2130 @@
+[
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.540649609731878,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.540649609731878,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 9.054998394578158,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 18.616555324458226,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.550786135048014,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.550786135048014,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.529620954552874,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 18.634477069929606,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.043288969948695,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 69.45419800265311,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 69.45419800265311,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 69.45419800265311,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.9942678837190901,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.9942678837190901,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.9942678837190901,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.8314267060989968,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.263625625683477,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.247299813259275,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.0747974313229984,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.0747974313229984,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2678522072658776,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.0747974313229984,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2679162479439474,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.38487961546193,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.4722204443750373,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.4722204443750373,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.4722204443750373,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2679162479439474,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.0747974313229984,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.8496901568290869,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.8314267060989968,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.8314267060989968,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.8314267060989968,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.8314267060989968,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.8314267060989968,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.8314267060989968,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.8314267060989968,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.8314267060989968,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.245955038241536,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.908517732945997,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.5772296895827208,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.5772296895827208,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.0747974313229984,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.0747974313229984,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.0747974313229984,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.381016814640992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.0747974313229984,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.0747974313229984,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.381016814640992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.381016814640992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.381016814640992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.381016814640992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.381016814640992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.381016814640992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.381016814640992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.381016814640992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.908517732945997,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.908517732945997,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.9077531241718287,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.955227472220321,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.955227472220321,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.436482442981832,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.436482442981832,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.955227472220321,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.955227472220321,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5381866659212642,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.461925629570055,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.163898727403347,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.381016814640992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.381016814640992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.381016814640992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.381016814640992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.8314267060989968,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.8314267060989968,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.6406419664363843,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.291317239768004,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.993528563474533,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.993528563474533,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.993528563474533,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.993528563474533,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.993528563474533,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.993528563474533,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.993528563474533,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5426622576712328,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 9.918014342448009,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 9.918014342448009,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 9.918014342448009,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.991204311874008,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.957408399384336,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.957408399384336,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5883428384488596,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5879364261002595,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5450456760614077,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.9534909596154606,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.9740940636872029,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5884325114705136,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.746362384578,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.746362384578,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.746362384578,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.746362384578,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.746362384578,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5885108675720576,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5866311208309096,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.979436372848478,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.9474328306784094,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.451915882789496,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.451915882789496,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.9534909596154606,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.746362384578,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.082003573172788,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.082003573172788,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.082003573172788,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.082003573172788,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.082003573172788,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.082003573172788,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.082003573172788,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.082003573172788,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.436482442981832,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.863424491227992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.863424491227992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.863424491227992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.863424491227992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.346887367011736,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.346887367011736,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.431853573078537,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.346887367011736,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.24980803994701,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.24980803994701,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.24980803994701,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.863424491227992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.746362384578,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.746362384578,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.863424491227992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.863424491227992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.946173614808042,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.915142062046004,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.915142062046004,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.905045115526879,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.915142062046004,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.774036408145383,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.774036408145383,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.877324117895364,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.9902741825008725,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 23.22253500751694,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 23.26613524672702,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.1479093574646781,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.743881370006993,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.743881370006993,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.148144767659218,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.1656502506333453,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.743881370006993,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.743881370006993,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.165629727859267,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.0818777932183403,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2297650904086934,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.7284533359407612,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2297650904086934,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2284301232353851,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.401662192917001,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.401662192917001,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.868024520226004,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.1657343257028236,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.743881370006993,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.743881370006993,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.743881370006993,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.743881370006993,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 10.496740797857,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.8168342287565263,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 10.496740797857,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 10.496740797857,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 10.496740797857,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 6.831404831223162,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.6641403781973176,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.908517732945997,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.0818777932183403,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.908517732945997,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.0818777932183403,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 6.850854485213983,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.1657343257028236,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.8204983182617105,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.1657343257028236,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.5854709181973647,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 10.496740797857,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.743881370006993,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.6641403781973176,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.155473849459079,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.6795111006487173,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.7284533359407612,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2451104477789807,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.7266845851193571,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.682585245138997,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.401662192917001,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.401662192917001,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.159169609905299,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.159169609905299,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 6.850854485213983,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.878371785672999,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 11.911985290283786,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.155473849459079,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.544876483299023,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5450456760614077,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 11.757640282216439,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 11.76321901744779,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2451104477789807,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2451104477789807,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2451104477789807,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.371273990368995,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.7411590971383597,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.6742284369086307,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 5.878371785672999,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.6146873173285026,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.7348737497440356,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 11.911985290283786,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5461932042610542,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2451104477789807,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2595170398857325,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5451485572115156,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.371273990368995,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 10.305568659589996,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 10.305568659589996,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5450456760614077,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5451485572115156,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5451485572115156,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 3.371273990368995,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 10.305568659589996,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.165984230955436,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 0.736502923294308,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2615306499377974,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 11.169623730257035,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5451485572115156,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 10.305568659589996,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.5451485572115156,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.957654573814876,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.957654573814876,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.957654573814876,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 6.3013107336129215,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.6750636276226,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 54.84638901234845,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.3896872402086915,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2690951046428476,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2690951046428476,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.140173741172013,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.141431220062183,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 1.2615306499377974,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 2.016750736249469,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 10.122249474396817,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.082003573172788,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.3896872402086915,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.140173741172013,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 68.07615423787112,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.863424491227992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.863424491227992,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 23.500318494679163,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 23.500318494679163,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 23.500318494679163,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 6.957359703185813,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 11.408852452763412,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 11.329252645343981,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 68.07615423787112,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 6.923832717524991,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 11.395610314640832,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 4.263209692538657,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 68.07615423787112,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 10.496740797857,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 9.901603279546839,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  },
+  {
+    "predicted_embodied_carbon_kg_co2e": 54.84638901234845,
+    "value_kind": "model_prediction",
+    "model_type": "random_forest_depth_10_leaf_1",
+    "dataset_version": "CarbonSet-arXiv-2506.10373v1-2026-10-13",
+    "functional_unit": "one processor over modeled lifecycle",
+    "boundary": "CarbonSet/ECO-CHIP modeled design, manufacturing, packaging, use, and end of life"
+  }
+]

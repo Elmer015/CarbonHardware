@@ -11,6 +11,7 @@ sys.path.insert(0, str(CARBON))
 sys.path.insert(0, str(MODELS))
 
 from cci import CCIValidationError, compute_cci
+from custom_pc import BuildComponent, ComponentFactor, CustomPcValidationError, calculate_custom_pc_embodied_carbon
 from e_waste import EWasteValidationError, calculate_e_waste
 from embodied_carbon import predict_embodied_carbon, reported_lca_value
 from operational_carbon import OperationalCarbonValidationError, calculate_from_power, calculate_operational_carbon
@@ -19,6 +20,44 @@ from uncertainty import UncertaintyValidationError, summarize_interval, summariz
 
 
 class CarbonAccountingTests(unittest.TestCase):
+    def test_custom_pc_requires_all_component_factors_for_a_total(self):
+        factors = [
+            ComponentFactor("cpu-example", "cpu", "Example CPU", 20, "verified LCA", "manufacturing"),
+            ComponentFactor("ram-16gb", "ram", "16 GB DIMM", 4, "verified LCA", "manufacturing"),
+        ]
+        result = calculate_custom_pc_embodied_carbon(
+            [
+                BuildComponent("cpu-example", "cpu"),
+                BuildComponent("ram-16gb", "ram", quantity=2),
+                BuildComponent("custom-ssd", "storage"),
+            ],
+            factors,
+        )
+        self.assertFalse(result.complete)
+        self.assertIsNone(result.total_kg_co2e)
+        self.assertEqual(result.resolved_subtotal_kg_co2e, 28)
+        self.assertEqual(result.components[2].status, "unresolved")
+
+    def test_custom_pc_records_an_explicit_proxy(self):
+        factors = [
+            ComponentFactor("gpu-proxy", "gpu", "Comparable GPU", 100, "verified LCA", "manufacturing"),
+        ]
+        result = calculate_custom_pc_embodied_carbon(
+            [BuildComponent("requested-gpu", "gpu", proxy_component_id="gpu-proxy")], factors
+        )
+        self.assertTrue(result.complete)
+        self.assertEqual(result.total_kg_co2e, 100)
+        self.assertEqual(result.components[0].method, "explicit_proxy_factor")
+
+    def test_custom_pc_rejects_a_cross_type_proxy(self):
+        factors = [
+            ComponentFactor("cpu-example", "cpu", "Example CPU", 20, "verified LCA", "manufacturing"),
+        ]
+        with self.assertRaises(CustomPcValidationError):
+            calculate_custom_pc_embodied_carbon(
+                [BuildComponent("requested-gpu", "gpu", proxy_component_id="cpu-example")], factors
+            )
+
     def test_phase4_prediction_is_not_reported_lca(self):
         model_path = ROOT / "ml-engine" / "artifacts" / "embodied_carbon_model.joblib"
         if not model_path.exists():
