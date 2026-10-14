@@ -191,6 +191,14 @@ python ml-engine/models/train.py --source carbonset --dataset-version <approved-
 
 Model artifact tests are in [test_models.py](../ml-engine/tests/test_models.py). They require explicit `CARBONHARDWARE_MODEL_PATH` and `CARBONHARDWARE_PREDICTION_INPUT` environment variables so tests cannot silently use an unapproved or fabricated model. Before the supplied CarbonSet paper and dataset were added, the pipeline correctly reported `blocked`; the actual run and metrics are recorded below.
 
+$env:CARBONHARDWARE_MODEL_PATH = (Resolve-Path .\ml-engine\artifacts\embodied_carbon_model.joblib).Path
+$env:CARBONHARDWARE_PREDICTION_INPUT = (Resolve-Path .\data\processed\carbonset-test.csv).Path
+
+python -m unittest discover -s ml-engine/tests -p "test_*.py"
+
+Remove-Item Env:CARBONHARDWARE_MODEL_PATH
+Remove-Item Env:CARBONHARDWARE_PREDICTION_INPUT
+
 ### Actual Phase 4 run: 2026-10-13
 
 The supplied CarbonSet paper established the target unit as `kg CO2e`, so Phase 3 was run with `Emb_Carbon_Mean`, `Product` grouping, and the five numeric hardware features listed above. The 1,320 input rows produced 1,303 rows after removing 17 exact duplicates. The grouped split contained 776 training rows, 261 validation rows, and 266 test rows.
