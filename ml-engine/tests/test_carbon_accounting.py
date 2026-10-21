@@ -14,7 +14,7 @@ from cci import CCIValidationError, compute_cci
 from custom_pc import BuildComponent, ComponentFactor, CustomPcValidationError, calculate_custom_pc_embodied_carbon
 from e_waste import EWasteValidationError, calculate_e_waste
 from embodied_carbon import predict_embodied_carbon, reported_lca_value
-from operational_carbon import OperationalCarbonValidationError, calculate_from_power, calculate_operational_carbon
+from operational_carbon import OperationalCarbonValidationError, calculate_from_power, calculate_from_tdp, calculate_operational_carbon
 from stec import STECIncompleteError, calculate_stec, stec_status
 from uncertainty import UncertaintyValidationError, summarize_interval, summarize_samples
 
@@ -102,6 +102,21 @@ class CarbonAccountingTests(unittest.TestCase):
         )
         self.assertEqual(power_result.electricity_kwh, 0.1)
         self.assertEqual(power_result.carbon_kg_co2e, 0.05)
+
+    def test_operational_carbon_estimate_from_tdp_uses_assumption_mode(self):
+        result = calculate_from_tdp(
+            250,
+            0.6,
+            8,
+            365,
+            0.5,
+            grid_intensity_source="example grid",
+            analysis_period="2025",
+            assumptions={"method": "TDP-based assumption"},
+        )
+        self.assertAlmostEqual(result.electricity_kwh, 438.0)
+        self.assertAlmostEqual(result.carbon_kg_co2e, 219.0)
+        self.assertEqual(result.assumptions["method"], "TDP-based assumption")
 
     def test_operational_carbon_rejects_negative_input(self):
         with self.assertRaises(OperationalCarbonValidationError):

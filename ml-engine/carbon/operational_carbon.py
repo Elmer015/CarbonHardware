@@ -79,3 +79,42 @@ def calculate_from_power(
 		analysis_period=analysis_period,
 		assumptions=assumptions,
 	)
+
+
+def calculate_from_tdp(
+	power_w: float,
+	utilization: float,
+	hours_per_day: float,
+	days_per_year: float,
+	grid_intensity_kg_co2e_per_kwh: float,
+	*,
+	grid_intensity_source: str,
+	analysis_period: str,
+	assumptions: dict[str, Any] | None = None,
+) -> OperationalCarbonResult:
+	"""Estimate operational carbon using TDP as a power proxy with explicit user assumptions.
+
+	This is a scenario-based estimate, not a measured electrical-power reading. The caller must
+	provide utilization, daily runtime, yearly duration, and grid intensity explicitly.
+	"""
+	power = _nonnegative(power_w, "power_w")
+	utilization_value = float(utilization)
+	if not np.isfinite(utilization_value) or not 0 <= utilization_value <= 1:
+		raise OperationalCarbonValidationError("utilization must be between 0 and 1")
+	hours = _nonnegative(hours_per_day, "hours_per_day")
+	days = _nonnegative(days_per_year, "days_per_year")
+	assumptions = dict(assumptions or {})
+	assumptions["method"] = assumptions.get("method", "TDP-based assumption")
+	assumptions["power_source"] = "TDP as power proxy"
+	assumptions["power_to_energy"] = "electricity_kwh = power_w / 1000 * hours_per_day * days_per_year * utilization"
+	assumptions["utilization"] = utilization_value
+	assumptions["hours_per_day"] = hours
+	assumptions["days_per_year"] = days
+	electricity = power / 1000 * hours * days * utilization_value
+	return calculate_operational_carbon(
+		electricity,
+		grid_intensity_kg_co2e_per_kwh,
+		grid_intensity_source=grid_intensity_source,
+		analysis_period=analysis_period,
+		assumptions=assumptions,
+	)
