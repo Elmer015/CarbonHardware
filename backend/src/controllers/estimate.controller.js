@@ -1,5 +1,6 @@
 import { AppError } from "../middleware/errorHandler.js";
-import { calculateOperationalEnergy } from "../services/carbon.service.js";
+import { calculateOperationalCarbon, calculateOperationalEnergy } from "../services/carbon.service.js";
+import { findGridIntensity } from "../services/grid-intensity.service.js";
 import { findHardware } from "../services/hardware.service.js";
 import { calculateStec, predictEmbodied } from "../services/python.service.js";
 import { calculateCci, summarizeUncertainty } from "../services/metrics.service.js";
@@ -36,6 +37,18 @@ function hardwareInput(body, hardware) {
 
 export function operationalEnergy(request, response) {
   response.json({ ...calculateOperationalEnergy(request.body), valueKind: "electricity_estimate" });
+}
+
+export function operationalCarbon(request, response) {
+  const energy = calculateOperationalEnergy(request.body);
+  const year = number(request.body.analysisYear, "analysisYear", { integer: true });
+  const grid = findGridIntensity(request.app.locals.gridIntensity, required(request.body.region, "region"), year);
+  response.json({
+    ...calculateOperationalCarbon({ electricityKwh: energy.electricityKwh, gridIntensityKgCo2ePerKwh: grid.kgCo2ePerKwh }),
+    energy,
+    gridIntensity: grid,
+    analysisYear: year,
+  });
 }
 
 export async function embodiedEstimate(request, response) {

@@ -21,12 +21,18 @@ directory.
 - `GET /api/hardware/processors/:name`
 - `POST /api/estimates/embodied`
 - `POST /api/estimates/operational-energy`
+- `POST /api/estimates/operational-carbon`
+- `GET /api/grid-intensity?region=Indonesia&year=2020`
+- `GET /api/grid-intensity/regions`
 - `POST /api/estimates/stec`
 - `POST /api/estimates/cci`
 - `POST /api/estimates/uncertainty`
 
-`operational-energy` returns kWh only. It deliberately returns
-`carbonStatus: "pending_grid_intensity"` because no grid factor is assumed.
+`operational-energy` returns kWh only. `operational-carbon` performs an explicit
+region/year lookup from the OWID/Ember lifecycle snapshot at
+`data/raw/environmental/owid-lifecycle-carbon-intensity.csv`, converts
+gCO2e/kWh to kgCO2e/kWh, and returns provenance metadata. Missing region/year
+data returns `404`; there is no silent fallback.
 `stec` delegates to `ml-engine/carbon/stec.py` and returns location-based,
 cradle-to-gate die STEC with its assumptions.
 

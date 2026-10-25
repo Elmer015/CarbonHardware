@@ -119,6 +119,55 @@ digunakan, sehingga response memiliki:
 }
 ```
 
+### Grid intensity
+
+Snapshot lokal OWID/Ember digunakan sebagai sumber lifecycle grid intensity:
+
+```text
+data/raw/environmental/owid-lifecycle-carbon-intensity.csv
+```
+
+Lookup dilakukan berdasarkan lokasi dan tahun, bukan input angka mentah user:
+
+```http
+GET /api/grid-intensity?region=Indonesia&year=2020
+GET /api/grid-intensity/regions
+```
+
+Nilai asli dalam `gCO2e/kWh` dikonversi ke `kgCO2e/kWh` dengan membagi 1.000.
+Jika region/tahun tidak tersedia, API mengembalikan `404` dan tidak memakai
+fallback diam-diam.
+
+### Operational carbon
+
+```http
+POST /api/estimates/operational-carbon
+```
+
+Contoh request:
+
+```json
+{
+  "tdpW": 180,
+  "hoursPerDay": 8,
+  "usageYears": 5,
+  "utilization": 0.7,
+  "daysPerYear": 365,
+  "region": "Indonesia",
+  "analysisYear": 2020
+}
+```
+
+Contoh hasil utama:
+
+```json
+{
+  "electricityKwh": 1839.6,
+  "gridIntensityKgCo2ePerKwh": 0.68515,
+  "operationalCarbonKgCo2e": 1260.93294
+}
+```
+
 ### STEC
 
 ```http
@@ -196,12 +245,16 @@ Sudah tersedia:
 - kalkulasi STEC location-based;
 - integrasi Node.js ke Python STEC engine;
 - metadata boundary, unit, dan asumsi.
+- snapshot OWID/Ember lifecycle grid intensity;
+- lookup grid intensity berdasarkan region dan tahun;
+- operational carbon dalam `kg CO2e`;
+- CCI yang menggabungkan embodied dan operational carbon.
 
 Belum tersedia:
 
 - integrasi model embodied `joblib`;
 - batch pipeline seluruh workbook STEC;
-- integrasi frontend ke API;
+- uncertainty propagation untuk operational dan total carbon;
 - market-based attribution;
 - provenance lokasi fab yang lengkap per produk;
 - pemodelan chiplet dengan node dan fab berbeda.

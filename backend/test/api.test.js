@@ -19,9 +19,16 @@ const hardware = [{
     embodiedMaxKgCo2e: 3,
   },
 }];
+const gridIntensity = [{
+  region: "Indonesia",
+  code: "IDN",
+  year: 2020,
+  gramsCo2ePerKwh: 685.15,
+  kgCo2ePerKwh: 0.68515,
+}];
 
 test("hardware and metric endpoints validate requests", async () => {
-  const server = createServer(createApp(hardware));
+  const server = createServer(createApp(hardware, gridIntensity));
   await new Promise((resolve) => server.listen(0, resolve));
   const { port } = server.address();
   const url = `http://127.0.0.1:${port}`;
@@ -29,6 +36,10 @@ test("hardware and metric endpoints validate requests", async () => {
     const processors = await fetch(`${url}/api/hardware/processors`);
     assert.equal(processors.status, 200);
     assert.equal((await processors.json()).length, 1);
+
+    const grid = await fetch(`${url}/api/grid-intensity?region=Indonesia&year=2020`);
+    assert.equal(grid.status, 200);
+    assert.equal((await grid.json()).kgCo2ePerKwh, 0.68515);
 
     const cci = await fetch(`${url}/api/estimates/cci`, {
       method: "POST",
@@ -50,6 +61,31 @@ test("hardware and metric endpoints validate requests", async () => {
       body: JSON.stringify({ totalCarbonKgCo2e: 20, completedComputeWork: 0 }),
     });
     assert.equal(invalid.status, 400);
+
+    const operationalCarbon = await fetch(`${url}/api/estimates/operational-carbon`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        tdpW: 180,
+        hoursPerDay: 8,
+        usageYears: 5,
+        utilization: 0.7,
+        daysPerYear: 365,
+        region: "Indonesia",
+        analysisYear: 2020,
+      }),
+    });
+    assert.equal(operationalCarbon.status, 200);
+    const operationalResult = await operationalCarbon.json();
+    assert.equal(operationalResult.energy.electricityKwh, 1839.6);
+    assert.equal(operationalResult.operationalCarbonKgCo2e, 1260.40194);
+
+    const unavailable = await fetch(`${url}/api/estimates/operational-carbon`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ tdpW: 180, hoursPerDay: 8, usageYears: 5, utilization: 0.7, daysPerYear: 365, region: "Indonesia", analysisYear: 2025 }),
+    });
+    assert.equal(unavailable.status, 404);
   } finally {
     await new Promise((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
   }

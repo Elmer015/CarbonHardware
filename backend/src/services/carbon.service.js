@@ -20,3 +20,16 @@ export function calculateOperationalEnergy({ tdpW, hoursPerDay, usageYears, util
     assumptions: { method: "TDP-based assumption", powerSource: "TDP as power proxy", powerToEnergy: "tdpW / 1000 * hoursPerDay * daysPerYear * usageYears * utilization", tdpW: power, hoursPerDay: hours, daysPerYear: days, usageYears: years, utilization: use },
   };
 }
+
+export function calculateOperationalCarbon({ electricityKwh, gridIntensityKgCo2ePerKwh }) {
+  const energy = nonnegative(electricityKwh, "electricityKwh");
+  const intensity = nonnegative(gridIntensityKgCo2ePerKwh, "gridIntensityKgCo2ePerKwh");
+  return {
+    operationalCarbonKgCo2e: energy * intensity,
+    unit: "kg_co2e",
+    valueKind: "estimated_lifecycle_location_based_operational_carbon",
+    boundary: "use-phase electricity multiplied by lifecycle grid intensity",
+    electricityKwh: energy,
+    gridIntensityKgCo2ePerKwh: intensity,
+  };
+}
