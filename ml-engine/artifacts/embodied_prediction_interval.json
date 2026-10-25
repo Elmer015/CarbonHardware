@@ -1,0 +1,39 @@
+{
+  "method": "multiplicative interval from relative out-of-fold residuals, 5-fold GroupKFold by die signature",
+  "model_configuration": "RandomForestRegressor(n_estimators=100, max_depth=10, min_samples_leaf=1, random_state=42)",
+  "residual_definition": "(actual - predicted) / predicted",
+  "coverage_note": "empirical on CarbonSet only; not calibrated or validated on hardware outside CarbonSet",
+  "rows": 1297,
+  "pooled": {
+    "0.90": {
+      "q_low": -0.2033091030746674,
+      "q_high": 0.7055279045118645
+    },
+    "0.95": {
+      "q_low": -0.2444768451082059,
+      "q_high": 0.7992665110149758
+    }
+  },
+  "by_type": {
+    "CPU": {
+      "0.90": {
+        "q_low": -0.11477037182616308,
+        "q_high": 0.7055279045118645
+      },
+      "0.95": {
+        "q_low": -0.19911822159717266,
+        "q_high": 0.7055279045118645
+      }
+    },
+    "GPU": {
+      "0.90": {
+        "q_low": -0.2444768451082059,
+        "q_high": 0.8132965039037064
+      },
+      "0.95": {
+        "q_low": -0.2533430121814256,
+        "q_high": 0.9497670716322165
+      }
+    }
+  }
+}
