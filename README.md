@@ -182,7 +182,6 @@ Contoh request:
   "processorName": "Research CPU",
   "processNodeNm": 28,
   "dieAreaMm2": 100,
-  "gridIntensityGCo2ePerKwh": 561,
   "manufacturingRegion": "Taiwan",
   "manufacturingYear": 2022
 }
@@ -191,6 +190,24 @@ Contoh request:
 Endpoint ini meneruskan kalkulasi ke
 [`ml-engine/carbon/stec.py`](./ml-engine/carbon/stec.py) dan menghasilkan
 location-based die STEC dengan boundary `cradle-to-gate die manufacturing`.
+Faktor grid dicari backend dari dataset lifecycle berdasarkan negara dan tahun.
+
+Batch STEC seluruh processor CarbonSet dihitung ulang dari data source dan
+evidence fab/chiplet:
+
+```powershell
+python ml-engine/carbon/stec_batch.py
+```
+
+Hasil tersimpan di
+[`data/processed/stec-per-chip.csv`](./data/processed/stec-per-chip.csv).
+API dapat menampilkan daftar terfilter melalui `GET /api/stec/processors?type=CPU&status=point`
+atau detail processor melalui `GET /api/stec/processors/:name`. Lokasi fab
+multi-kandidat menghasilkan rentang. Baris tanpa parameter node yang valid
+ditandai `incomplete`, bukan dihitung memakai parameter tebakan.
+Frontend STEC menyediakan dropdown processor dan panel kalkulasi custom;
+panel custom mengambil CI secara otomatis dari lookup negara/tahun, bukan dari
+input faktor emisi manual.
 
 ### CCI
 
@@ -221,6 +238,7 @@ Sudah tersedia:
 - perhitungan operational energy tanpa grid intensity default;
 - kalkulasi STEC location-based;
 - integrasi Node.js ke Python STEC engine;
+- batch STEC untuk daftar processor CarbonSet beserta provenance dan rentang lokasi fab;
 - metadata boundary, unit, dan asumsi.
 - snapshot OWID/Ember lifecycle grid intensity;
 - lookup grid intensity berdasarkan region dan tahun;
@@ -230,10 +248,9 @@ Sudah tersedia:
 Belum tersedia:
 
 - integrasi model embodied `joblib`;
-- batch pipeline seluruh workbook STEC;
 - market-based attribution;
 - provenance lokasi fab yang lengkap per produk;
-- pemodelan chiplet dengan node dan fab berbeda.
+- parameter STEC untuk node chiplet 12 nm pada tiga produk AMD.
 
 ## Catatan metodologi
 

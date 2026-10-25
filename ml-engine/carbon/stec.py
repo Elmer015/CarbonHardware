@@ -148,8 +148,8 @@ def stec_status() -> STECStatus:
         missing_evidence=(
             "product-level fab provenance for unresolved vendors/products",
             "validated manufacturing year when release year is used as proxy",
-            "yield data when yield correction is required",
+            "validated node parameters for chiplet dies at unsupported process nodes",
             "market-based PPA/REC factor and source",
         ),
-        notes="Location-based die STEC is implemented; unresolved evidence remains explicit.",
+        notes="Location-based die STEC is implemented without yield correction; unresolved evidence remains explicit.",
     )

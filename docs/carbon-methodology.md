@@ -1,6 +1,6 @@
 # Phase 5: Carbon Accounting Engine
 
-**Status:** implemented with explicit evidence boundaries; STEC remains incomplete.  
+**Status:** implemented with explicit evidence boundaries; product-level fab and chiplet evidence remains incomplete for some processors.
 **Date:** 2026-10-15
 
 ## Accounting Principles
@@ -60,27 +60,49 @@ Required evidence for a project scenario includes hardware mass, replacement/dis
 
 ## STEC and Dual Carbon Attribution
 
-`stec.py` now implements location-based, country-year STEC for one CPU/GPU die using the verified workbook contract:
+`stec.py` implements location-based, country-year STEC for one CPU/GPU die.
+`stec_batch.py` applies that equation to the deduplicated CarbonSet processor
+list using the workbook and supplied fab/chiplet evidence:
 
 ```text
 intensity_g_per_cm2 = GPS + MPS + CI * EPS
 stec_kg_co2e = intensity_g_per_cm2 * die_area_mm2 / 100 / 1000
 ```
 
-An optional yield correction divides the result by `yield_factor`. Node parameters for the paper's table are included, and 22 nm explicitly uses the workbook's 20 nm proxy. The function requires a caller-supplied country-year grid intensity and manufacturing region/year; it never invents either value. Unknown nodes, invalid values, and unsupported evidence fail explicitly.
+The batch uses the supplied country-year lifecycle electricity intensity in
+`data/raw/environmental/owid-lifecycle-carbon-intensity.csv`, fab inputs under
+`data/raw/stec/evidence/`, and the methodology workbook at
+`docs/research/Analisis_STEC_CPU_GPU.xlsx`. It does not apply yield correction
+or market-based attribution. CarbonSet release year is explicitly labeled as a
+manufacturing-year proxy when no product-specific override exists. The 22 nm
+CarbonSet bucket explicitly uses the workbook's 20 nm parameters.
 
-The implementation boundary remains **cradle-to-gate die manufacturing**. It does not include packaging, board, memory, cooling, use, or end-of-life. Multi-die allocation, unresolved fab-location ranges, product release-year proxies, and market-based attribution must be handled by the caller using the workbook's per-chip data and assumptions.
+Rows with multiple candidate fab countries report min/max location scenarios,
+not a statistical confidence interval. The batch calculates 1,272 unique
+processors: 659 point estimates, 610 location ranges, and 3 incomplete
+chiplet results. Three AMD chiplet records contain 12 nm I/O dies, for which
+the workbook has no matching node parameter; those totals are not reported
+until a sourced parameter or an explicitly approved proxy is supplied.
 
-Before implementation, obtain and verify:
+Chiplet products with supported node parameters are calculated die-by-die,
+including each die's area, count, node, and manufacturing region. The
+implementation boundary remains **cradle-to-gate die manufacturing**; it
+does not include packaging, board, memory, cooling, use, or end-of-life.
+Market-based attribution remains unavailable because no sourced contractual
+factors were supplied. The generated batch is reproducible with:
 
-1. the exact spatial-temporal embodied-carbon equation and functional unit;
-2. the two attribution definitions and their non-overlap rule;
-3. spatial location/grid/manufacturing inputs and time-period inputs;
-4. allocation, boundary, and unit conventions;
-5. any correction factors and their empirical sources.
+```powershell
+python ml-engine/carbon/stec_batch.py
+```
 
-No STEC number should be reported until these items are available and tested against the cited methodology.
+It writes `data/processed/stec-per-chip.csv`. The backend recalculates the
+inventory at startup and exposes it through `GET /api/stec/processors`.
 
 ## Tests
 
-`ml-engine/tests/test_carbon_accounting.py` covers model-prediction labeling, operational-carbon equations and invalid inputs, CCI workload validation, e-waste mass conservation and carbon separation, and the explicit incomplete STEC path.
+`ml-engine/tests/test_carbon_accounting.py` covers model-prediction labeling,
+operational-carbon equations and invalid inputs, CCI workload validation,
+e-waste mass conservation and carbon separation, and the explicit incomplete
+STEC path. `ml-engine/tests/test_stec_batch.py` verifies the supplied batch,
+product-specific fab evidence, location ranges, node proxies, and unsupported
+chiplet handling.

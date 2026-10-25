@@ -1,0 +1,13 @@
+vendor,type,node_nm,candidate_regions,foundry,confidence,basis
+AMD,CPU,7,Taiwan,TSMC,medium,"Assumption: Zen 2/3 CCDs on TSMC N7; IO dies on GlobalFoundries are modeled only for products listed in chiplets.csv"
+AMD,GPU,7,Taiwan,TSMC,high,"Assumption: RDNA/Vega 7nm GPUs manufactured by TSMC"
+AMD,CPU,14,United States,GlobalFoundries,medium,"Assumption: Zen/Zen+ 14/12nm at GlobalFoundries Fab 8 (New York)"
+AMD,GPU,14,United States,GlobalFoundries,medium,"Assumption: Polaris/Vega 14nm at GlobalFoundries"
+AMD,GPU,28,Taiwan,TSMC,medium,"Assumption: GCN 28nm GPUs manufactured by TSMC"
+AMD,CPU,28,Germany;United States,GlobalFoundries,low,"Assumption: 28nm APUs at GlobalFoundries; fab site not resolved"
+NVIDIA,GPU,28,Taiwan,TSMC,high,"Assumption: Kepler/Maxwell 28nm manufactured by TSMC"
+NVIDIA,GPU,14,Taiwan;South Korea,TSMC;Samsung,mixed,"Assumption: CarbonSet 14nm bucket mixes TSMC 16/12nm and Samsung 14nm parts"
+NVIDIA,GPU,10,South Korea,Samsung,high,"Assumption: CarbonSet 10nm bucket holds Samsung 8nm GA102"
+NVIDIA,GPU,7,Taiwan,TSMC,high,"Assumption: GA100 on TSMC N7"
+Intel,CPU,*,United States;Ireland;Israel,Intel,unresolved,"Assumption: Intel fabs in US, Ireland, Israel; per-SKU fab not public"
+Intel,GPU,*,United States;Ireland;Israel,Intel,unresolved,"Assumption: Intel products in CarbonSet assumed made in Intel fabs"

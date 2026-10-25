@@ -24,6 +24,9 @@ directory.
 - `POST /api/estimates/operational-carbon`
 - `GET /api/grid-intensity?region=Indonesia&year=2020`
 - `GET /api/grid-intensity/regions`
+- `GET /api/stec/processors?type=CPU&status=point&page=1&pageSize=50`
+- `GET /api/stec/processors/options`
+- `GET /api/stec/processors/:name`
 - `POST /api/estimates/stec`
 - `POST /api/estimates/cci`
 
@@ -34,6 +37,15 @@ gCO2e/kWh to kgCO2e/kWh, and returns provenance metadata. Missing region/year
 data returns `404`; there is no silent fallback.
 `stec` delegates to `ml-engine/carbon/stec.py` and returns location-based,
 cradle-to-gate die STEC with its assumptions.
+The server recomputes the CarbonSet STEC inventory at startup using
+`ml-engine/carbon/stec_batch.py`. The list endpoint supports `search`, `type`
+(`CPU`/`GPU`), `status` (`point`/`range`/`incomplete`), `page`, and `pageSize`
+(maximum 200). A multi-country fab assumption returns min/max values and no
+single point estimate. Unsupported chiplet node parameters are marked
+incomplete. The options endpoint returns compact processor labels for the
+frontend selector. `POST /api/estimates/stec` looks up the location-based
+grid factor using `manufacturingRegion` and `manufacturingYear`; callers do
+not pass an arbitrary grid factor.
 
 `cci` requires `totalCarbonKgCo2e`, `completedComputeWork`, `workloadUnit`,
 `lifecycleBoundary`, and `analysisPeriod`. It returns carbon per completed

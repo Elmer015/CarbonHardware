@@ -67,17 +67,34 @@ export async function embodiedEstimate(request, response) {
 }
 
 export async function stecEstimate(request, response) {
-  const processor = hardwareInput(request.body, request.app.locals.hardware);
+  const body = request.body;
+  let processor;
+  let dieAreaMm2;
+  let processNodeNm;
+  if (body.inputMode === "existing") {
+    processor = findHardware(request.app.locals.hardware, required(body.processorName, "processorName"));
+    if (!processor) throw new AppError(404, "Processor not found in CarbonSet");
+    dieAreaMm2 = number(body.dieAreaMm2 ?? processor.dieSizeValue ?? processor.dieSizeMm2, "dieAreaMm2");
+    processNodeNm = required(body.processNodeNm ?? processor.processSizeNm, "processNodeNm");
+  } else if (body.inputMode === "custom") {
+    processor = { name: required(body.processorName, "processorName") };
+    dieAreaMm2 = number(body.dieAreaMm2, "dieAreaMm2");
+    processNodeNm = required(body.processNodeNm, "processNodeNm");
+  } else {
+    throw new AppError(400, "inputMode must be existing or custom");
+  }
+  const manufacturingYear = number(body.manufacturingYear, "manufacturingYear", { integer: true });
+  const manufacturingRegion = required(body.manufacturingRegion, "manufacturingRegion");
+  const gridIntensity = findGridIntensity(request.app.locals.gridIntensity, manufacturingRegion, manufacturingYear);
   const result = await calculateStec({
-    die_area_mm2: number(request.body.dieAreaMm2 ?? processor.dieSizeValue ?? processor.dieSizeMm2, "dieAreaMm2"),
-    node_nm: required(request.body.processNodeNm ?? processor.processSizeNm, "processNodeNm"),
-    grid_intensity_g_co2e_per_kwh: number(request.body.gridIntensityGCo2ePerKwh, "gridIntensityGCo2ePerKwh"),
-    manufacturing_region: required(request.body.manufacturingRegion, "manufacturingRegion"),
-    manufacturing_year: number(request.body.manufacturingYear, "manufacturingYear", { integer: true }),
-    yield_factor: request.body.yieldFactor === undefined ? null : number(request.body.yieldFactor, "yieldFactor"),
-    source: request.body.source || "CarbonHardware API",
+    die_area_mm2: dieAreaMm2,
+    node_nm: processNodeNm,
+    grid_intensity_g_co2e_per_kwh: gridIntensity.gramsCo2ePerKwh,
+    manufacturing_region: manufacturingRegion,
+    manufacturing_year: manufacturingYear,
+    source: body.source || "CarbonHardware API",
   });
-  response.json({ value: result.stecKgCo2e, unit: "kg_co2e", valueKind: "estimated_location_based_die_stec", boundary: "cradle-to-gate die manufacturing", functionalUnit: "one chip", ...result });
+  response.json({ value: result.stecKgCo2e, unit: "kg_co2e", valueKind: "estimated_location_based_die_stec", boundary: "cradle-to-gate die manufacturing", functionalUnit: "one chip", gridIntensity, processor, ...result });
 }
 
 export function cciEstimate(request, response) {

@@ -1,9 +1,44 @@
+import { useState } from "react";
+
 export default function HardwareForm({ form, setForm, mode, setMode, processors, loadingProcessors, onSubmit }) {
+  const [processorSearch, setProcessorSearch] = useState("");
+  const [showProcessorOptions, setShowProcessorOptions] = useState(false);
   const update = (key) => (event) => setForm({ ...form, [key]: event.target.value });
+  const searchTerm = processorSearch.trim().toLowerCase();
+  const filteredProcessors = processors.filter((processor) =>
+    `${processor.name} ${processor.vendor}`.toLowerCase().includes(searchTerm));
+
+  function searchProcessors(event) {
+    const value = event.target.value;
+    setProcessorSearch(value);
+    const selected = processors.find((processor) => processor.name === form.name);
+    if (selected && !`${selected.name} ${selected.vendor}`.toLowerCase().includes(value.trim().toLowerCase())) {
+      setForm((current) => ({ ...current, name: "", processSize: "", tdp: "", dieSize: "", dies: "", avgDieArea: "" }));
+    }
+  }
+
   return <form className="form-card" onSubmit={onSubmit}><div className="form-heading"><div><span className="eyebrow">PROCESSOR PROFILE</span><h2>{mode === "existing" ? "Choose a processor" : "Custom processor"}</h2></div><span className="step-count">REQUIRED</span></div>
     <p className="form-intro">Existing processors use their five model features directly from CarbonSet. Switch to custom only for hardware that is not in the dataset.</p>
     <div className="mode-switch" role="group" aria-label="Processor input mode"><button type="button" className={mode === "existing" ? "mode-button active" : "mode-button"} onClick={() => setMode("existing")}>Existing processor</button><button type="button" className={mode === "custom" ? "mode-button active" : "mode-button"} onClick={() => setMode("custom")}>Custom processor</button></div>
-    {mode === "existing" ? <label>Processor name<select value={form.name} onChange={(event) => { const processor = processors.find((item) => item.name === event.target.value); setForm(processor ? { ...form, ...processor } : { ...form, name: event.target.value }); }} required><option value="">{loadingProcessors ? "Loading CarbonSet..." : "Select a processor"}</option>{processors.map((processor) => <option key={processor.name} value={processor.name}>{processor.name} ({processor.vendor})</option>)}</select></label> : <label>Processor name<input value={form.name} onChange={update("name")} placeholder="e.g. Research CPU" required /></label>}
+    {mode === "existing" ? <><label>Search processor<div className="processor-search-control" onBlur={(event) => {
+      if (!event.currentTarget.contains(event.relatedTarget)) setShowProcessorOptions(false);
+    }}>
+      <input type="search" value={processorSearch} onFocus={() => setShowProcessorOptions(true)} onChange={(event) => {
+        searchProcessors(event);
+        setShowProcessorOptions(true);
+      }} onKeyDown={(event) => { if (event.key === "Enter") event.preventDefault(); }} placeholder="Search by processor or vendor..." aria-label="Search CarbonSet processors" aria-expanded={showProcessorOptions} />
+      {showProcessorOptions && <div className="processor-search-results" role="listbox" aria-label="Matching CarbonSet processors">
+        {loadingProcessors
+          ? <span className="processor-search-empty">Loading processors...</span>
+          : filteredProcessors.length
+            ? filteredProcessors.map((processor) => <button type="button" role="option" aria-selected={processor.name === form.name} className="processor-search-option" key={processor.name} onMouseDown={(event) => event.preventDefault()} onClick={() => {
+            setForm({ ...form, ...processor });
+              setProcessorSearch(processor.name);
+            setShowProcessorOptions(false);
+          }}>{processor.name} <span>{processor.vendor}</span></button>)
+            : <span className="processor-search-empty">No matching processors</span>}
+      </div>}
+    </div><span className="unit">{filteredProcessors.length} matches</span></label></> : <label>Processor name<input value={form.name} onChange={update("name")} placeholder="e.g. Research CPU" required /></label>}
     {mode === "custom" && <><div className="form-grid"><label>Process size <span className="unit">nm</span><input type="number" min="0" step="any" value={form.processSize} onChange={update("processSize")} required /></label><label>TDP <span className="unit">W</span><input type="number" min="0" step="any" value={form.tdp} onChange={update("tdp")} required /></label></div>
       <div className="form-grid"><label>Die size <span className="unit">mm²</span><input type="number" min="0" step="any" value={form.dieSize} onChange={update("dieSize")} required /></label><label>Number of dies <span className="unit">count</span><input type="number" min="0" step="1" value={form.dies} onChange={update("dies")} required /></label></div>
       <label>Average die area <span className="unit">mm²</span><input type="number" min="0" step="any" value={form.avgDieArea} onChange={update("avgDieArea")} required /></label>
