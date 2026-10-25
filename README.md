@@ -211,29 +211,6 @@ POST /api/estimates/cci
 Response utamanya adalah `5 kg CO2e per completed training run`. Workload
 harus didefinisikan agar CCI dapat dibandingkan secara valid.
 
-### Uncertainty
-
-```http
-POST /api/estimates/uncertainty
-```
-
-Untuk interval CarbonSet:
-
-```json
-{
-  "lowerValue": 5.65,
-  "centralValue": 7.74,
-  "upperValue": 13.14,
-  "unit": "kg_co2e",
-  "source": "CarbonSet modeled range",
-  "uncertaintyKind": "source_range",
-  "method": "CarbonSet min/mean/max"
-}
-```
-
-Endpoint juga menerima `samples` untuk menghasilkan empirical quantiles. Hasil
-sample-based diberi label `not calibrated coverage`.
-
 ## Status implementasi
 
 Sudah tersedia:
@@ -254,7 +231,6 @@ Belum tersedia:
 
 - integrasi model embodied `joblib`;
 - batch pipeline seluruh workbook STEC;
-- uncertainty propagation untuk operational dan total carbon;
 - market-based attribution;
 - provenance lokasi fab yang lengkap per produk;
 - pemodelan chiplet dengan node dan fab berbeda.

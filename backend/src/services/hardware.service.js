@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import { AppError } from "../middleware/errorHandler.js";
 
-const columns = ["name", "type", "releaseDate", "processSizeNm", "tdpW", "dieSizeValue", "dieSizeMm2", "vendor", "dies", "avgDieAreaMm2", "embodiedMin", "operationalMin", "totalMin", "embodiedMax", "operationalMax", "totalMax", "embodiedMean", "operationalMean", "totalMean"];
+const columns = ["name", "type", "releaseDate", "processSizeNm", "tdpW", "dieSizeValue", "dieSizeMm2", "vendor", "dies", "avgDieAreaMm2"];
 
 function parseCsvLine(line) {
   const values = [];
@@ -30,7 +30,6 @@ function toHardware(values) {
     processSizeNm: numeric(row.processSizeNm, "Process Size (nm)"), tdpW: numeric(row.tdpW, "TDP (W)"),
     dieSizeValue: numeric(row.dieSizeValue, "DieSizeValue"), dieSizeMm2: row.dieSizeMm2, vendor: row.vendor,
     dies: numeric(row.dies, "#dies"), avgDieAreaMm2: numeric(row.avgDieAreaMm2, "Avg Die Area"),
-    carbonSet: { embodiedMinKgCo2e: numeric(row.embodiedMin, "Emb_Carbon_Min"), embodiedMaxKgCo2e: numeric(row.embodiedMax, "Emb_Carbon_Max"), embodiedMeanKgCo2e: numeric(row.embodiedMean, "Emb_Carbon_Mean") },
   };
 }
 

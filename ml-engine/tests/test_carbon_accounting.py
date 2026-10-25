@@ -16,7 +16,6 @@ from e_waste import EWasteValidationError, calculate_e_waste
 from embodied_carbon import predict_embodied_carbon, reported_lca_value
 from operational_carbon import OperationalCarbonValidationError, calculate_from_power, calculate_from_tdp, calculate_operational_carbon
 from stec import STECIncompleteError, STECValidationError, calculate_stec, stec_status
-from uncertainty import UncertaintyValidationError, summarize_interval, summarize_samples
 
 
 class CarbonAccountingTests(unittest.TestCase):
@@ -163,35 +162,6 @@ class CarbonAccountingTests(unittest.TestCase):
                 recycling_fraction=0.2,
                 disposal_fraction=0.2,
                 scenario_source="source",
-            )
-
-    def test_uncertainty_reports_source_and_method_without_calibration_claim(self):
-        result = summarize_samples(
-            [1, 2, 3, 4],
-            unit="kg_co2e",
-            source="CarbonSet modeled interval",
-        )
-        self.assertEqual(result.sample_count, 4)
-        self.assertIn("not calibrated coverage", result.method)
-        interval = summarize_interval(
-            1,
-            2,
-            3,
-            unit="kg_co2e",
-            source="reported range",
-            uncertainty_kind="source_range",
-            method="published min/max",
-        )
-        self.assertEqual(interval.central_value, 2)
-        with self.assertRaises(UncertaintyValidationError):
-            summarize_interval(
-                3,
-                2,
-                1,
-                unit="kg_co2e",
-                source="source",
-                uncertainty_kind="range",
-                method="published",
             )
 
     def test_stec_reproduces_eq7_with_country_year_ci(self):

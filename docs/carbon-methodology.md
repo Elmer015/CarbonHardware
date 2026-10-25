@@ -81,21 +81,6 @@ Before implementation, obtain and verify:
 
 No STEC number should be reported until these items are available and tested against the cited methodology.
 
-## Uncertainty
-
-`models/uncertainty.py` supports two evidence-preserving forms:
-
-- `summarize_interval()` for a source-provided lower/central/upper range;
-- `summarize_samples()` for supplied non-negative samples, reporting empirical quantiles.
-
-The output records unit, source, uncertainty kind, method, and sample count. The sample method explicitly says its quantiles are **not calibrated coverage**. This is an uncertainty summary, not a claim that the model is probabilistically calibrated. The current CarbonSet provenance supports modeled min/max/mean outputs, while the project's separate uncertainty framework is still unavailable; those should not be conflated.
-
-Uncertainty categories to preserve in future data are:
-
-- input uncertainty: uncertain hardware, energy, lifetime, or grid inputs;
-- parameter uncertainty: uncertain ECO-CHIP or accounting parameters;
-- model uncertainty: uncertainty from using an experimental estimator rather than a validated physical/LCA model.
-
 ## Tests
 
-`ml-engine/tests/test_carbon_accounting.py` covers model-prediction labeling, operational-carbon equations and invalid inputs, CCI workload validation, e-waste mass conservation and carbon separation, uncertainty interval/sample validation, and the explicit incomplete STEC path.
+`ml-engine/tests/test_carbon_accounting.py` covers model-prediction labeling, operational-carbon equations and invalid inputs, CCI workload validation, e-waste mass conservation and carbon separation, and the explicit incomplete STEC path.

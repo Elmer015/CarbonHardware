@@ -23,7 +23,6 @@ export function createApp(hardware = [], gridIntensity = []) {
       gridIntensity: "GET /api/grid-intensity?region=Indonesia&year=2020",
       stecEstimate: "POST /api/estimates/stec",
       cci: "POST /api/estimates/cci",
-      uncertainty: "POST /api/estimates/uncertainty",
     },
   }));
   app.get("/health", (_request, response) => response.json({ status: "ok", service: "carbon-hardware-backend" }));

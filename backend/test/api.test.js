@@ -13,11 +13,6 @@ const hardware = [{
   dieSizeMm2: "100",
   dies: 1,
   avgDieAreaMm2: 100,
-  carbonSet: {
-    embodiedMinKgCo2e: 1,
-    embodiedMeanKgCo2e: 2,
-    embodiedMaxKgCo2e: 3,
-  },
 }];
 const gridIntensity = [{
   region: "Indonesia",
@@ -35,7 +30,9 @@ test("hardware and metric endpoints validate requests", async () => {
   try {
     const processors = await fetch(`${url}/api/hardware/processors`);
     assert.equal(processors.status, 200);
-    assert.equal((await processors.json()).length, 1);
+    const processorList = await processors.json();
+    assert.equal(processorList.length, 1);
+    assert.equal("carbonSet" in processorList[0], false);
 
     const grid = await fetch(`${url}/api/grid-intensity?region=Indonesia&year=2020`);
     assert.equal(grid.status, 200);
@@ -86,6 +83,11 @@ test("hardware and metric endpoints validate requests", async () => {
       body: JSON.stringify({ tdpW: 180, hoursPerDay: 8, usageYears: 5, utilization: 0.7, daysPerYear: 365, region: "Indonesia", analysisYear: 2025 }),
     });
     assert.equal(unavailable.status, 404);
+
+    for (const endpoint of ["/uncertainty", "/uncertainty/total", "/uncertainty/custom"]) {
+      const response = await fetch(`${url}/api/estimates${endpoint}`, { method: "POST" });
+      assert.equal(response.status, 404);
+    }
   } finally {
     await new Promise((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
   }

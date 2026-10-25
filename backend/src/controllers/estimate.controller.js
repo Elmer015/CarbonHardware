@@ -3,7 +3,7 @@ import { calculateOperationalCarbon, calculateOperationalEnergy } from "../servi
 import { findGridIntensity } from "../services/grid-intensity.service.js";
 import { findHardware } from "../services/hardware.service.js";
 import { calculateStec, predictEmbodied } from "../services/python.service.js";
-import { calculateCci, summarizeUncertainty } from "../services/metrics.service.js";
+import { calculateCci } from "../services/metrics.service.js";
 
 function required(value, field) {
   if (value === undefined || value === null || value === "") throw new AppError(400, `${field} is required`);
@@ -24,6 +24,7 @@ function hardwareInput(body, hardware) {
     if (!processor) throw new AppError(404, "Processor not found in CarbonSet");
     return processor;
   }
+
   if (body.inputMode !== "custom") throw new AppError(400, "inputMode must be existing or custom");
   return {
     name: required(body.processorName, "processorName"),
@@ -81,8 +82,4 @@ export async function stecEstimate(request, response) {
 
 export function cciEstimate(request, response) {
   response.json(calculateCci(request.body));
-}
-
-export function uncertaintyEstimate(request, response) {
-  response.json(summarizeUncertainty(request.body));
 }

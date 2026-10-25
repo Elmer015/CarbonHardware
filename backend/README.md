@@ -26,7 +26,6 @@ directory.
 - `GET /api/grid-intensity/regions`
 - `POST /api/estimates/stec`
 - `POST /api/estimates/cci`
-- `POST /api/estimates/uncertainty`
 
 `operational-energy` returns kWh only. `operational-carbon` performs an explicit
 region/year lookup from the OWID/Ember lifecycle snapshot at
@@ -39,10 +38,6 @@ cradle-to-gate die STEC with its assumptions.
 `cci` requires `totalCarbonKgCo2e`, `completedComputeWork`, `workloadUnit`,
 `lifecycleBoundary`, and `analysisPeriod`. It returns carbon per completed
 workload unit.
-
-`uncertainty` accepts either `lowerValue`, `centralValue`, and `upperValue`,
-or an array of at least two `samples`. It returns an evidence-bounded interval
-and never claims calibrated confidence coverage.
 
 The embodied endpoint runs the experimental Random Forest artifact at
 `ml-engine/artifacts/embodied_carbon_model.joblib` and returns a
