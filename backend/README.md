@@ -27,6 +27,7 @@ directory.
 - `GET /api/stec/processors?type=CPU&status=point&page=1&pageSize=50`
 - `GET /api/stec/processors/options`
 - `GET /api/stec/processors/:name`
+- `GET /api/comparison`
 - `POST /api/estimates/stec`
 - `POST /api/estimates/cci`
 
@@ -55,3 +56,9 @@ The embodied endpoint runs the experimental Random Forest artifact at
 `ml-engine/artifacts/embodied_carbon_model.joblib` and returns a
 `model_prediction` with its unit, boundary, dataset version, and model type.
 This remains an experimental estimator, not a reported or measured LCA value.
+
+`GET /api/comparison` returns one record per CarbonSet processor, pairing its
+embodied-model prediction with its batch STEC result. The endpoint predicts the
+inventory in one Python batch and caches the result for the backend process.
+These values have different lifecycle boundaries and must not be added or
+interpreted as competing predictions for the same target.

@@ -98,6 +98,15 @@ python ml-engine/carbon/stec_batch.py
 It writes `data/processed/stec-per-chip.csv`. The backend recalculates the
 inventory at startup and exposes it through `GET /api/stec/processors`.
 
+The frontend's **Baseline vs STEC** page shows the experimental embodied-model
+prediction and STEC estimate side by side for a selected processor. They have
+different boundaries and are not additive or directly comparable as
+alternative predictions of the same target. The embodied-carbon estimate
+output separately lists up to two same-type CarbonSet processors with lower
+baseline predictions. These are screening candidates only; the current
+inventory does not contain equivalent workload benchmark data to establish
+performance parity or a verified upgrade.
+
 ## Tests
 
 `ml-engine/tests/test_carbon_accounting.py` covers model-prediction labeling,

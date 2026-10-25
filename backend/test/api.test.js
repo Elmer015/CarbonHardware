@@ -30,9 +30,20 @@ const stecResults = [{
   stec_min_kg_co2e: 1,
   stec_max_kg_co2e: 2,
 }];
+const comparisonPredictions = [{
+  name: "Test CPU",
+  value: 4,
+  unit: "kg_co2e",
+  valueKind: "model_prediction",
+  functionalUnit: "one processor over modeled lifecycle",
+  boundary: "modeled lifecycle",
+  metadata: { model_type: "test-model" },
+}];
 
 test("hardware and metric endpoints validate requests", async () => {
-  const server = createServer(createApp(hardware, gridIntensity, stecResults));
+  const server = createServer(createApp(hardware, gridIntensity, stecResults, {
+    predictEmbodiedBatch: async () => comparisonPredictions,
+  }));
   await new Promise((resolve) => server.listen(0, resolve));
   const { port } = server.address();
   const url = `http://127.0.0.1:${port}`;
@@ -60,6 +71,14 @@ test("hardware and metric endpoints validate requests", async () => {
     const stecProcessor = await fetch(`${url}/api/stec/processors/Test%20CPU`);
     assert.equal(stecProcessor.status, 200);
     assert.equal((await stecProcessor.json()).status, "range");
+
+    const comparison = await fetch(`${url}/api/comparison`);
+    assert.equal(comparison.status, 200);
+    const comparisonData = await comparison.json();
+    assert.equal(comparisonData.results.length, 1);
+    assert.equal(comparisonData.results[0].baseline.value, 4);
+    assert.equal(comparisonData.results[0].stec.status, "range");
+    assert.equal(comparisonData.metadata.valuesAreAdditive, false);
 
     const invalidStecFilter = await fetch(`${url}/api/stec/processors?type=server`);
     assert.equal(invalidStecFilter.status, 400);

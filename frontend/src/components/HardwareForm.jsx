@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-export default function HardwareForm({ form, setForm, mode, setMode, processors, loadingProcessors, onSubmit }) {
-  const [processorSearch, setProcessorSearch] = useState("");
+export default function HardwareForm({ form, setForm, mode, setMode, processors, loadingProcessors, processorSearch, setProcessorSearch, onSubmit }) {
   const [showProcessorOptions, setShowProcessorOptions] = useState(false);
   const update = (key) => (event) => setForm({ ...form, [key]: event.target.value });
   const searchTerm = processorSearch.trim().toLowerCase();

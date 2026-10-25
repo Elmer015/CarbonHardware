@@ -55,7 +55,6 @@ export default function StecResults() {
         if (!regionData.regions.includes(customForm.manufacturingRegion) && regionData.regions.length) {
           setCustomForm((current) => ({ ...current, manufacturingRegion: regionData.regions[0] }));
         }
-        if (processorData.options.length) setSelectedProduct(processorData.options[0].product);
       })
       .catch((requestError) => {
         if (requestError.name !== "AbortError") setError(requestError.message);
