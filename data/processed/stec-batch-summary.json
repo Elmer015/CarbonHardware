@@ -1,0 +1,22 @@
+{
+  "input": "data\\interim\\carbonset-cleaned.csv",
+  "output": "data\\processed\\stec-per-chip.csv",
+  "processors": 1272,
+  "grid_source": "Our World in Data, Carbon intensity of electricity (Ember-based, g CO2e/kWh)",
+  "status_counts": {
+    "point": 662,
+    "range": 610
+  },
+  "location_level_counts": {
+    "vendor_node_assumption": 1257,
+    "chiplet_sourced": 4,
+    "product_sourced": 11
+  },
+  "manufacturing_year_status_counts": {
+    "release_year_proxy": 1272
+  },
+  "chiplet_products": 4,
+  "yield_corrected_products": 0,
+  "market_based_computed_products": 0,
+  "label": "estimated location-based die STEC; see location_level and warnings per row"
+}

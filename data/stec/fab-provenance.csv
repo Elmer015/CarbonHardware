@@ -1,0 +1,12 @@
+vendor,type,product,process_node_nm,manufacturing_region,foundry,confidence,source
+NVIDIA,GPU,NVIDIA A100 PCIe 40 GB,7,Taiwan,TSMC,high,"NVIDIA A100 Tensor Core GPU Architecture whitepaper (2020): GA100 fabricated on TSMC 7nm N7"
+NVIDIA,GPU,NVIDIA A100 SXM4 40 GB,7,Taiwan,TSMC,high,"NVIDIA A100 Tensor Core GPU Architecture whitepaper (2020): GA100 fabricated on TSMC 7nm N7"
+NVIDIA,GPU,NVIDIA A100 SXM4 80 GB,7,Taiwan,TSMC,high,"NVIDIA A100 Tensor Core GPU Architecture whitepaper (2020): GA100 fabricated on TSMC 7nm N7"
+NVIDIA,GPU,NVIDIA A100 PCIe 80 GB,7,Taiwan,TSMC,high,"NVIDIA A100 Tensor Core GPU Architecture whitepaper (2020): GA100 fabricated on TSMC 7nm N7"
+NVIDIA,GPU,NVIDIA A100X,7,Taiwan,TSMC,high,"NVIDIA A100 Tensor Core GPU Architecture whitepaper (2020): GA100 fabricated on TSMC 7nm N7"
+NVIDIA,GPU,NVIDIA DRIVE A100 PROD,7,Taiwan,TSMC,high,"NVIDIA A100 Tensor Core GPU Architecture whitepaper (2020): GA100 fabricated on TSMC 7nm N7"
+NVIDIA,GPU,NVIDIA GRID A100A,7,Taiwan,TSMC,high,"NVIDIA A100 Tensor Core GPU Architecture whitepaper (2020): GA100 fabricated on TSMC 7nm N7"
+NVIDIA,GPU,NVIDIA GRID A100B,7,Taiwan,TSMC,high,"NVIDIA A100 Tensor Core GPU Architecture whitepaper (2020): GA100 fabricated on TSMC 7nm N7"
+NVIDIA,GPU,RTX 3090Ti,10,South Korea,Samsung,high,"NVIDIA Ampere GA102 GPU Architecture whitepaper (2020): Samsung 8nm 8N NVIDIA custom process"
+NVIDIA,GPU,NVIDIA V100 SXM,14,Taiwan,TSMC,high,"NVIDIA Tesla V100 GPU Architecture whitepaper (2017): GV100 on TSMC 12nm FFN"
+NVIDIA,GPU,GTX TITAN V,14,Taiwan,TSMC,high,"NVIDIA Tesla V100 GPU Architecture whitepaper (2017): GV100 on TSMC 12nm FFN"

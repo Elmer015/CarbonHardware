@@ -237,7 +237,7 @@ class CarbonAccountingTests(unittest.TestCase):
                 manufacturing_year=2022,
                 yield_factor=0,
             )
-        self.assertEqual(status.status, "implemented_location_based")
+        self.assertEqual(status.status, "implemented_location_market_multidie")
 
 
 if __name__ == "__main__":

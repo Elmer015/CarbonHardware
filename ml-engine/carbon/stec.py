@@ -11,7 +11,7 @@ end-of-life are outside this boundary.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from typing import Any
 
 
@@ -44,6 +44,27 @@ class STECResult:
     manufacturing_year: int
     yield_factor: float | None
     assumptions: dict[str, Any]
+    attribution: str = "location-based"
+
+
+@dataclass(frozen=True)
+class STECDieComponent:
+    role: str
+    die_area_mm2: float
+    node_nm: int | float | str
+    manufacturing_region: str
+    manufacturing_year: int
+    grid_intensity_g_co2e_per_kwh: float
+    yield_factor: float | None = None
+    source: str = ""
+
+
+@dataclass(frozen=True)
+class MultiDieSTECResult:
+    stec_kg_co2e: float
+    components: tuple[tuple[str, STECResult], ...]
+    attribution: str
+    assumptions: dict[str, Any]
 
 
 @dataclass(frozen=True)
@@ -64,6 +85,7 @@ NODE_PARAMETERS: dict[str, STECNodeParameters] = {
     "5": STECNodeParameters("5", 2.75, 225, 500, "Zhang et al. Table 7"),
     "3": STECNodeParameters("3", 2.75, 275, 500, "Zhang et al. Table 7"),
     "22": STECNodeParameters("20", 1.2, 110, 500, "Explicit 20 nm proxy", "22"),
+    "12": STECNodeParameters("14", 1.2, 125, 500, "Explicit 14 nm proxy (GlobalFoundries 12LP is a 14LPP derivative)", "12"),
 }
 
 
@@ -142,14 +164,90 @@ def calculate_stec(
     )
 
 
+def calculate_market_based_stec(
+    *,
+    die_area_mm2: float,
+    node_nm: int | float | str,
+    market_based_factor_g_co2e_per_kwh: float,
+    contract_type: str,
+    factor_source: str,
+    foundry: str,
+    manufacturing_region: str,
+    manufacturing_year: int,
+    yield_factor: float | None = None,
+    assumptions: dict[str, Any] | None = None,
+) -> STECResult:
+    """Calculate market-based STEC from a sourced supplier/contract factor.
+
+    Market-based and location-based results are reported side by side and are
+    never summed. The factor must come from a contractual instrument disclosure
+    (for example PPA or REC volumes in a foundry sustainability report).
+    """
+    if not contract_type or not factor_source or not foundry:
+        raise STECIncompleteError("market-based STEC requires contract_type, factor_source, and foundry")
+    recorded = dict(assumptions or {})
+    recorded.update({"attribution": "market-based", "contract_type": contract_type, "foundry": foundry})
+    result = calculate_stec(
+        die_area_mm2=die_area_mm2,
+        node_nm=node_nm,
+        grid_intensity_g_co2e_per_kwh=market_based_factor_g_co2e_per_kwh,
+        manufacturing_region=manufacturing_region,
+        manufacturing_year=manufacturing_year,
+        yield_factor=yield_factor,
+        source=factor_source,
+        assumptions=recorded,
+    )
+    return replace(result, attribution="market-based")
+
+
+def calculate_multi_die_stec(
+    components: list[STECDieComponent],
+    *,
+    attribution: str = "location-based",
+) -> MultiDieSTECResult:
+    """Sum die-level STEC for chiplet products whose dies differ in node or fab.
+
+    Each die keeps its own node, manufacturing region, year, and carbon intensity.
+    """
+    if not components:
+        raise STECIncompleteError("at least one die component is required")
+    if attribution not in ("location-based", "market-based"):
+        raise STECValidationError("attribution must be location-based or market-based")
+    results = []
+    for component in components:
+        if not component.role:
+            raise STECValidationError("each die component needs a role, for example CCD or IOD")
+        result = calculate_stec(
+            die_area_mm2=component.die_area_mm2,
+            node_nm=component.node_nm,
+            grid_intensity_g_co2e_per_kwh=component.grid_intensity_g_co2e_per_kwh,
+            manufacturing_region=component.manufacturing_region,
+            manufacturing_year=component.manufacturing_year,
+            yield_factor=component.yield_factor,
+            source=component.source or "CarbonHardware chiplet dataset",
+            assumptions={"die_role": component.role},
+        )
+        results.append((component.role, replace(result, attribution=attribution)))
+    return MultiDieSTECResult(
+        stec_kg_co2e=sum(result.stec_kg_co2e for _, result in results),
+        components=tuple(results),
+        attribution=attribution,
+        assumptions={
+            "boundary": "cradle-to-gate die manufacturing, summed over all dies",
+            "functional_unit": "one chip package (dies only)",
+            "aggregation": "sum of per-die GPS + MPS + CI * EPS over each die area",
+        },
+    )
+
+
 def stec_status() -> STECStatus:
     return STECStatus(
-        status="implemented_location_based",
+        status="implemented_location_market_multidie",
         missing_evidence=(
             "product-level fab provenance for unresolved vendors/products",
             "validated manufacturing year when release year is used as proxy",
-            "yield data when yield correction is required",
-            "market-based PPA/REC factor and source",
+            "sourced yield data when yield correction is required",
+            "sourced market-based PPA/REC factors per foundry and year",
         ),
-        notes="Location-based die STEC is implemented; unresolved evidence remains explicit.",
+        notes="Location-based, market-based (sourced factor only), and multi-die STEC are implemented; unresolved evidence remains explicit.",
     )
