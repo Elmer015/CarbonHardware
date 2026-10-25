@@ -2,6 +2,7 @@ import { AppError } from "../middleware/errorHandler.js";
 import { calculateOperationalEnergy } from "../services/carbon.service.js";
 import { findHardware } from "../services/hardware.service.js";
 import { calculateStec } from "../services/python.service.js";
+import { calculateCci, summarizeUncertainty } from "../services/metrics.service.js";
 
 function required(value, field) {
   if (value === undefined || value === null || value === "") throw new AppError(400, `${field} is required`);
@@ -54,4 +55,12 @@ export async function stecEstimate(request, response) {
     source: request.body.source || "CarbonHardware API",
   });
   response.json({ value: result.stecKgCo2e, unit: "kg_co2e", valueKind: "estimated_location_based_die_stec", boundary: "cradle-to-gate die manufacturing", functionalUnit: "one chip", ...result });
+}
+
+export function cciEstimate(request, response) {
+  response.json(calculateCci(request.body));
+}
+
+export function uncertaintyEstimate(request, response) {
+  response.json(summarizeUncertainty(request.body));
 }

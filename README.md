@@ -143,6 +143,48 @@ Endpoint ini meneruskan kalkulasi ke
 [`ml-engine/carbon/stec.py`](./ml-engine/carbon/stec.py) dan menghasilkan
 location-based die STEC dengan boundary `cradle-to-gate die manufacturing`.
 
+### CCI
+
+```http
+POST /api/estimates/cci
+```
+
+```json
+{
+  "totalCarbonKgCo2e": 20,
+  "completedComputeWork": 4,
+  "workloadUnit": "completed training run",
+  "lifecycleBoundary": "embodied plus operational",
+  "analysisPeriod": "2025"
+}
+```
+
+Response utamanya adalah `5 kg CO2e per completed training run`. Workload
+harus didefinisikan agar CCI dapat dibandingkan secara valid.
+
+### Uncertainty
+
+```http
+POST /api/estimates/uncertainty
+```
+
+Untuk interval CarbonSet:
+
+```json
+{
+  "lowerValue": 5.65,
+  "centralValue": 7.74,
+  "upperValue": 13.14,
+  "unit": "kg_co2e",
+  "source": "CarbonSet modeled range",
+  "uncertaintyKind": "source_range",
+  "method": "CarbonSet min/mean/max"
+}
+```
+
+Endpoint juga menerima `samples` untuk menghasilkan empirical quantiles. Hasil
+sample-based diberi label `not calibrated coverage`.
+
 ## Status implementasi
 
 Sudah tersedia:

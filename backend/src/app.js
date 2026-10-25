@@ -18,6 +18,8 @@ export function createApp(hardware = []) {
       embodiedEstimate: "POST /api/estimates/embodied",
       operationalEnergy: "POST /api/estimates/operational-energy",
       stecEstimate: "POST /api/estimates/stec",
+      cci: "POST /api/estimates/cci",
+      uncertainty: "POST /api/estimates/uncertainty",
     },
   }));
   app.get("/health", (_request, response) => response.json({ status: "ok", service: "carbon-hardware-backend" }));
