@@ -60,7 +60,16 @@ Required evidence for a project scenario includes hardware mass, replacement/dis
 
 ## STEC and Dual Carbon Attribution
 
-`stec.py` is deliberately marked **incomplete**. The repository contains only the title of the cited spatial-temporal embodied-carbon and dual carbon attribution paper; it does not contain the verified equation, attribution definitions, spatial/temporal datasets, allocation rule, or correction factors. `calculate_stec()` raises `STECIncompleteError` instead of returning an invented value.
+`stec.py` now implements location-based, country-year STEC for one CPU/GPU die using the verified workbook contract:
+
+```text
+intensity_g_per_cm2 = GPS + MPS + CI * EPS
+stec_kg_co2e = intensity_g_per_cm2 * die_area_mm2 / 100 / 1000
+```
+
+An optional yield correction divides the result by `yield_factor`. Node parameters for the paper's table are included, and 22 nm explicitly uses the workbook's 20 nm proxy. The function requires a caller-supplied country-year grid intensity and manufacturing region/year; it never invents either value. Unknown nodes, invalid values, and unsupported evidence fail explicitly.
+
+The implementation boundary remains **cradle-to-gate die manufacturing**. It does not include packaging, board, memory, cooling, use, or end-of-life. Multi-die allocation, unresolved fab-location ranges, product release-year proxies, and market-based attribution must be handled by the caller using the workbook's per-chip data and assumptions.
 
 Before implementation, obtain and verify:
 

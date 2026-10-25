@@ -1,0 +1,12 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^npm install; if \\(\\$\\?\\) \\{ npm run build \\}$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^npm\\.cmd install; if \\(\\$\\?\\) \\{ npm\\.cmd run build \\}$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

@@ -15,7 +15,7 @@ from custom_pc import BuildComponent, ComponentFactor, CustomPcValidationError, 
 from e_waste import EWasteValidationError, calculate_e_waste
 from embodied_carbon import predict_embodied_carbon, reported_lca_value
 from operational_carbon import OperationalCarbonValidationError, calculate_from_power, calculate_from_tdp, calculate_operational_carbon
-from stec import STECIncompleteError, calculate_stec, stec_status
+from stec import STECIncompleteError, STECValidationError, calculate_stec, stec_status
 from uncertainty import UncertaintyValidationError, summarize_interval, summarize_samples
 
 
@@ -194,11 +194,50 @@ class CarbonAccountingTests(unittest.TestCase):
                 method="published",
             )
 
-    def test_stec_is_explicitly_incomplete(self):
+    def test_stec_reproduces_eq7_with_country_year_ci(self):
+        result = calculate_stec(
+            die_area_mm2=100,
+            node_nm=28,
+            grid_intensity_g_co2e_per_kwh=561,
+            manufacturing_region="Taiwan",
+            manufacturing_year=2022,
+        )
+        self.assertAlmostEqual(result.intensity_g_per_cm2, 1104.9)
+        self.assertAlmostEqual(result.stec_kg_co2e, 1.1049)
+        self.assertEqual(result.assumptions["boundary"], "cradle-to-gate die manufacturing")
+
+    def test_stec_records_explicit_node_proxy_and_yield(self):
+        result = calculate_stec(
+            die_area_mm2=100,
+            node_nm=22,
+            grid_intensity_g_co2e_per_kwh=500,
+            manufacturing_region="Taiwan",
+            manufacturing_year=2022,
+            yield_factor=0.5,
+        )
+        self.assertEqual(result.assumptions["explicit_proxy_node"], "22")
+        self.assertAlmostEqual(result.stec_kg_co2e, 2.42)
+
+    def test_stec_rejects_unknown_node_and_invalid_yield(self):
         status = stec_status()
-        self.assertEqual(status.status, "incomplete")
         with self.assertRaises(STECIncompleteError):
-            calculate_stec()
+            calculate_stec(
+                die_area_mm2=100,
+                node_nm=2,
+                grid_intensity_g_co2e_per_kwh=500,
+                manufacturing_region="Taiwan",
+                manufacturing_year=2022,
+            )
+        with self.assertRaises(STECValidationError):
+            calculate_stec(
+                die_area_mm2=100,
+                node_nm=28,
+                grid_intensity_g_co2e_per_kwh=500,
+                manufacturing_region="Taiwan",
+                manufacturing_year=2022,
+                yield_factor=0,
+            )
+        self.assertEqual(status.status, "implemented_location_based")
 
 
 if __name__ == "__main__":
