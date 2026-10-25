@@ -67,19 +67,50 @@ intensity_g_per_cm2 = GPS + MPS + CI * EPS
 stec_kg_co2e = intensity_g_per_cm2 * die_area_mm2 / 100 / 1000
 ```
 
-An optional yield correction divides the result by `yield_factor`. Node parameters for the paper's table are included, and 22 nm explicitly uses the workbook's 20 nm proxy. The function requires a caller-supplied country-year grid intensity and manufacturing region/year; it never invents either value. Unknown nodes, invalid values, and unsupported evidence fail explicitly.
+An optional yield correction divides the result by `yield_factor`. Node parameters for the paper's table are included; 22 nm uses the 20 nm parameters and 12 nm (GlobalFoundries 12LP IO dies) uses the 14 nm parameters, both labeled `explicit_proxy_node`. The function requires a caller-supplied country-year grid intensity and manufacturing region/year; it never invents either value. Unknown nodes, invalid values, and unsupported evidence fail explicitly.
 
-The implementation boundary remains **cradle-to-gate die manufacturing**. It does not include packaging, board, memory, cooling, use, or end-of-life. Multi-die allocation, unresolved fab-location ranges, product release-year proxies, and market-based attribution must be handled by the caller using the workbook's per-chip data and assumptions.
+The implementation boundary remains **cradle-to-gate die manufacturing**. It does not include packaging, board, memory, cooling, use, or end-of-life.
 
-Before implementation, obtain and verify:
+### Market-based and multi-die STEC
 
-1. the exact spatial-temporal embodied-carbon equation and functional unit;
-2. the two attribution definitions and their non-overlap rule;
-3. spatial location/grid/manufacturing inputs and time-period inputs;
-4. allocation, boundary, and unit conventions;
-5. any correction factors and their empirical sources.
+- `calculate_market_based_stec()` uses a contractual factor (PPA/REC) and requires `contract_type`, `factor_source`, and `foundry`. Its result is labeled `market-based` and is reported next to, never added to, the location-based value.
+- `calculate_multi_die_stec()` sums dies that differ in node or fab (for example AMD CCD on TSMC 7 nm in Taiwan plus IO die on GlobalFoundries 12/14 nm in the United States). CarbonSet records only the CCDs of AMD chiplet products, so chiplet totals are computed from `data/stec/chiplets.csv` instead of the CarbonSet die area.
 
-No STEC number should be reported until these items are available and tested against the cited methodology.
+### Evidence resolution (`stec_evidence.py`)
+
+`resolve_processor_stec()` assembles STEC inputs from `data/stec/*.csv` and the OWID/Ember country-year series in `data/raw/grid/`, labeling every evidence level:
+
+| Input | Order of evidence |
+|---|---|
+| Fab region | user input → `fab-provenance.csv` (product source) → `chiplets.csv` (per die) → `fab-rules.csv` (vendor/node assumption; several candidates give a **range**) → unresolved |
+| Manufacturing year | user input → `manufacturing-years.csv` → CarbonSet release year (labeled proxy) |
+| Yield | `yields.csv` by node, foundry, year; otherwise not applied |
+| Market-based factor | `market-factors.csv` by foundry and year; otherwise `not_available` |
+
+`manufacturing-years.csv`, `yields.csv`, and `market-factors.csv` currently contain headers only: no sourced values are available yet, so results use the release-year proxy, no yield correction, and no market-based value.
+
+### Batch, workbook, and API
+
+- `python ml-engine/carbon/stec_batch.py` writes `data/processed/stec-per-chip.csv` and `stec-batch-summary.json` for every CarbonSet processor.
+- `python ml-engine/experiments/build_stec_workbook.py` rebuilds `data/processed/Analisis_STEC_CPU_GPU.xlsx` from repository data only.
+- The backend exposes `POST /api/estimates/stec/processor` and `GET /api/estimates/stec/regions`; the frontend form shows the STEC result with its evidence level, range, chiplet breakdown, and warnings.
+
+Report every STEC value as an **estimated location-based die STEC** together with its `location.level`, manufacturing-year status, and warnings.
+
+## Lifecycle Carbon, Final CCI, and Propagated Uncertainty
+
+`carbon/lifecycle.py` combines the quantities for one processor scenario:
+
+```text
+electricity_kwh = tdp_w / 1000 * hours_per_day * days_per_year * usage_years * utilization
+operational_kg  = electricity_kwh * grid_kg_co2e_per_kwh
+total_kg        = embodied_kg + operational_kg
+cci_final       = total_kg / completed_compute_work
+```
+
+- Grid intensity: `carbon/grid_intensity.py` reads `data/grid/grid-intensity.csv` (region, year, g CO2e/kWh, source, basis), built from the Our World in Data / Ember series in `data/raw/grid`. Values are location-based, never interpolated or extrapolated; a missing region/year leaves operational carbon pending and labels CCI `embodied_only`. One grid year is held constant over the usage lifetime and this is stated in the result warnings.
+- Embodied range: CarbonSet `Emb_Carbon_Min/Max` for existing processors. Custom processors use a 90% empirical multiplicative interval from out-of-fold relative residuals of the same Random Forest configuration under 5-fold cross-validation grouped by die signature (`experiments/prediction_interval.py` → `artifacts/embodied_prediction_interval.json`); the interval is roughly -20% to +71% of the prediction and holds on CarbonSet only.
+- Propagation: Monte Carlo with triangular distributions `{min, mostLikely, max}` for TDP, utilization, hours per day, days per year, usage years, and grid intensity. Undistributed inputs are held constant and listed as such. The result reports P2.5/P5/median/P95/P97.5 for embodied, electricity, operational, total, embodied share, and CCI, plus Spearman rank correlations of embodied, electricity, and grid intensity with total carbon. These are propagated input ranges, not calibrated confidence intervals.
 
 ## Uncertainty
 

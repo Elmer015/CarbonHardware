@@ -1,7 +1,7 @@
 import { AppError } from "../middleware/errorHandler.js";
 import { calculateOperationalEnergy } from "../services/carbon.service.js";
 import { findHardware } from "../services/hardware.service.js";
-import { calculateStec, predictEmbodied } from "../services/python.service.js";
+import { calculateStec, estimateLifecycle, estimateProcessorStec, listGridRegions, listStecRegions, predictEmbodied } from "../services/python.service.js";
 import { calculateCci, summarizeUncertainty } from "../services/metrics.service.js";
 
 function required(value, field) {
@@ -64,6 +64,67 @@ export async function stecEstimate(request, response) {
     source: request.body.source || "CarbonHardware API",
   });
   response.json({ value: result.stecKgCo2e, unit: "kg_co2e", valueKind: "estimated_location_based_die_stec", boundary: "cradle-to-gate die manufacturing", functionalUnit: "one chip", ...result });
+}
+
+export async function stecProcessorEstimate(request, response) {
+  const processor = hardwareInput(request.body, request.app.locals.hardware);
+  const region = request.body.manufacturingRegion || null;
+  const year = request.body.manufacturingYear === undefined || request.body.manufacturingYear === ""
+    ? null
+    : number(request.body.manufacturingYear, "manufacturingYear", { integer: true });
+  const releaseYear = Number.parseInt(String(processor.releaseDate || "").slice(0, 4), 10);
+  if (request.body.inputMode === "custom" && (!region || year === null)) {
+    throw new AppError(400, "custom processors require manufacturingRegion and manufacturingYear");
+  }
+  const result = await estimateProcessorStec({
+    processor: {
+      name: processor.name,
+      type: processor.type || request.body.processorType || "",
+      vendor: processor.vendor || request.body.vendor || "",
+      processSizeNm: processor.processSizeNm,
+      dieAreaMm2: processor.dieSizeValue ?? processor.dieSizeMm2,
+      releaseYear: Number.isInteger(releaseYear) ? releaseYear : null,
+    },
+    manufacturingRegion: region,
+    manufacturingYear: year,
+  });
+  response.json({ unit: "kg_co2e", ...result });
+}
+
+export async function stecRegions(_request, response) {
+  response.json(await listStecRegions());
+}
+
+function embodiedFeatures(processor) {
+  return {
+    "Process Size (nm)": processor.processSizeNm,
+    "TDP (W)": processor.tdpW,
+    DieSizeValue: processor.dieSizeValue ?? processor.dieSizeMm2,
+    "#dies": processor.dies,
+    "Avg Die Area": processor.avgDieAreaMm2,
+  };
+}
+
+export async function lifecycleEstimate(request, response) {
+  const processor = hardwareInput(request.body, request.app.locals.hardware);
+  const usage = request.body.usage || {};
+  const embodied = await predictEmbodied({ features: embodiedFeatures(processor) });
+  const carbonSet = request.body.inputMode === "existing" ? processor.carbonSet : null;
+  const result = await estimateLifecycle({
+    embodied: carbonSet
+      ? { value: embodied.value, valueKind: embodied.valueKind, lowerValue: Math.min(carbonSet.embodiedMinKgCo2e, embodied.value), upperValue: Math.max(carbonSet.embodiedMaxKgCo2e, embodied.value), intervalSource: "CarbonSet Emb_Carbon_Min/Max around the model prediction" }
+      : { value: embodied.value, valueKind: embodied.valueKind },
+    usage: { tdpW: processor.tdpW, ...usage },
+    workload: request.body.workload || {},
+    distributions: request.body.distributions || {},
+    samples: request.body.samples,
+    seed: request.body.seed,
+  });
+  response.json({ processor: { name: processor.name, tdpW: processor.tdpW }, embodiedModel: embodied, ...result });
+}
+
+export async function gridRegions(_request, response) {
+  response.json(await listGridRegions());
 }
 
 export function cciEstimate(request, response) {

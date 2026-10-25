@@ -41,6 +41,46 @@ export function predictEmbodied(input) {
   return runPythonJson(script, input);
 }
 
+export function estimateProcessorStec(input) {
+  const script = [
+    "import json, sys",
+    `sys.path.insert(0, ${JSON.stringify(config.pythonEnginePath)})`,
+    "from stec_evidence import estimate_processor_stec",
+    "print(json.dumps(estimate_processor_stec(json.loads(sys.stdin.read()))))",
+  ].join("\n");
+  return runPythonJson(script, input);
+}
+
+export function estimateLifecycle(input) {
+  const script = [
+    "import json, sys",
+    `sys.path.insert(0, ${JSON.stringify(config.pythonEnginePath)})`,
+    "from lifecycle import estimate_lifecycle",
+    "print(json.dumps(estimate_lifecycle(json.loads(sys.stdin.read()))))",
+  ].join("\n");
+  return runPythonJson(script, input);
+}
+
+export function listGridRegions() {
+  const script = [
+    "import json, sys",
+    `sys.path.insert(0, ${JSON.stringify(config.pythonEnginePath)})`,
+    "from grid_intensity import list_regions",
+    "print(json.dumps(list_regions()))",
+  ].join("\n");
+  return runPythonJson(script, {});
+}
+
+export function listStecRegions() {
+  const script = [
+    "import json, sys",
+    `sys.path.insert(0, ${JSON.stringify(config.pythonEnginePath)})`,
+    "from stec_evidence import available_regions",
+    "print(json.dumps(available_regions()))",
+  ].join("\n");
+  return runPythonJson(script, {});
+}
+
 function runPythonJson(script, input) {
   return new Promise((resolve, reject) => {
     const child = spawn(config.pythonCommand, ["-c", script], { cwd: config.pythonEnginePath });
