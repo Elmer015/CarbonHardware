@@ -1,7 +1,7 @@
 import { AppError } from "../middleware/errorHandler.js";
 import { calculateOperationalEnergy } from "../services/carbon.service.js";
 import { findHardware } from "../services/hardware.service.js";
-import { calculateStec } from "../services/python.service.js";
+import { calculateStec, predictEmbodied } from "../services/python.service.js";
 import { calculateCci, summarizeUncertainty } from "../services/metrics.service.js";
 
 function required(value, field) {
@@ -38,9 +38,18 @@ export function operationalEnergy(request, response) {
   response.json({ ...calculateOperationalEnergy(request.body), valueKind: "electricity_estimate" });
 }
 
-export function embodiedEstimate(request, response) {
+export async function embodiedEstimate(request, response) {
   const processor = hardwareInput(request.body, request.app.locals.hardware);
-  response.status(202).json({ status: "model_pending", value: null, unit: "kg_co2e", valueKind: "model_prediction", processor, message: "Embodied model service is not connected yet; input contract is validated." });
+  const result = await predictEmbodied({
+    features: {
+      "Process Size (nm)": processor.processSizeNm,
+      "TDP (W)": processor.tdpW,
+      DieSizeValue: processor.dieSizeValue ?? processor.dieSizeMm2,
+      "#dies": processor.dies,
+      "Avg Die Area": processor.avgDieAreaMm2,
+    },
+  });
+  response.json({ status: "complete", ...result, processor });
 }
 
 export async function stecEstimate(request, response) {

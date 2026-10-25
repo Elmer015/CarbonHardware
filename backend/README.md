@@ -38,5 +38,7 @@ workload unit.
 or an array of at least two `samples`. It returns an evidence-bounded interval
 and never claims calibrated confidence coverage.
 
-The embodied endpoint currently validates the request contract and returns
-`202 model_pending`; the trained model integration will be added separately.
+The embodied endpoint runs the experimental Random Forest artifact at
+`ml-engine/artifacts/embodied_carbon_model.joblib` and returns a
+`model_prediction` with its unit, boundary, dataset version, and model type.
+This remains an experimental estimator, not a reported or measured LCA value.

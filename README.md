@@ -88,9 +88,9 @@ Custom processor:
 }
 ```
 
-Endpoint ini saat ini memvalidasi kontrak input dan mengembalikan
-`model_pending`. Integrasi model embodied akan ditambahkan setelah model
-dimurnikan.
+Endpoint ini menjalankan artifact Random Forest eksperimental dan
+mengembalikan `model_prediction` beserta unit, boundary, dataset version, dan
+model type. Nilai tersebut bukan reported atau measured LCA.
 
 ### Operational energy
 
