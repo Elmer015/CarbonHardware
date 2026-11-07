@@ -1,18 +1,17 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import HardwareForm from "../components/HardwareForm";
+import Resnet50Recommendations from "../components/Resnet50Recommendations";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 export default function EstimateCarbon() {
   const [mode, setMode] = useState("existing");
   const [processors, setProcessors] = useState([]);
-  const [comparisonRows, setComparisonRows] = useState([]);
   const [processorSearch, setProcessorSearch] = useState("");
   const [loadingProcessors, setLoadingProcessors] = useState(true);
   const [submitted, setSubmitted] = useState(false);
   const [results, setResults] = useState(null);
   const [error, setError] = useState("");
-  const [recommendationError, setRecommendationError] = useState("");
   const [form, setForm] = useState({
     name: "",
     processSize: "",
@@ -54,32 +53,8 @@ export default function EstimateCarbon() {
       .finally(() => {
         if (!controller.signal.aborted) setLoadingProcessors(false);
       });
-    fetch(`${API_URL}/api/comparison`, { signal: controller.signal })
-      .then(async (response) => {
-        const data = await response.json();
-        if (!response.ok) throw new Error(data.error || "Upgrade candidates could not be loaded");
-        return data.results;
-      })
-      .then(setComparisonRows)
-      .catch((requestError) => {
-        if (requestError.name !== "AbortError") setRecommendationError(requestError.message);
-      });
     return () => controller.abort();
   }, []);
-
-  const recommendations = useMemo(() => {
-    if (!results || mode !== "existing") return [];
-    const selectedName = results.embodied.processor.name;
-    const selectedType = results.embodied.processor.type;
-    const selectedCarbon = results.embodied.value;
-    return comparisonRows
-      .filter((candidate) =>
-        candidate.name !== selectedName
-        && candidate.type === selectedType
-        && candidate.baseline.value < selectedCarbon)
-      .sort((left, right) => left.baseline.value - right.baseline.value)
-      .slice(0, 2);
-  }, [comparisonRows, mode, results]);
 
   async function calculate(event) {
     event.preventDefault();
@@ -149,21 +124,6 @@ export default function EstimateCarbon() {
     }
   }
 
-  function selectRecommendation(candidate) {
-    const processor = processors.find((item) => item.name === candidate.name);
-    if (!processor) {
-      setRecommendationError(`Processor data is unavailable for ${candidate.name}`);
-      return;
-    }
-    setRecommendationError("");
-    setMode("existing");
-    setForm((current) => ({ ...current, ...processor }));
-    setProcessorSearch(processor.name);
-    setResults(null);
-    setSubmitted(false);
-    setError("");
-  }
-
   return <div className="page">
     <header className="topbar compact">
       <div>
@@ -202,26 +162,10 @@ export default function EstimateCarbon() {
           </div>}
         </div>
 
-        {results && mode === "existing" && <section className="assumption-card upgrade-output" aria-labelledby="upgrade-output-title">
-          <span className="eyebrow">UPGRADE CANDIDATE</span>
-          <h3 id="upgrade-output-title">Lower embodied-carbon options</h3>
-          <p className="upgrade-caveat">Candidates are ranked by baseline embodied-carbon prediction within the same processor type. Performance equivalence has not been verified.</p>
-          {recommendationError && <p className="stec-error" role="alert">{recommendationError}</p>}
-          {!recommendationError && recommendations.length === 0 && <p className="muted">No lower-carbon processor of the same type is available for comparison.</p>}
-          {recommendations[0] && <button type="button" className="upgrade-highlight" onClick={() => selectRecommendation(recommendations[0])}>
-            <span className="upgrade-rank">TOP CANDIDATE</span>
-            <strong>{recommendations[0].name}</strong>
-            <span>{recommendations[0].vendor} · {recommendations[0].type}</span>
-            <b>{recommendations[0].baseline.value.toFixed(2)} kg CO₂e</b>
-            <small>{((results.embodied.value - recommendations[0].baseline.value) / results.embodied.value * 100).toFixed(1)}% lower predicted embodied carbon · select to estimate</small>
-          </button>}
-          {recommendations[1] && <button type="button" className="upgrade-other" onClick={() => selectRecommendation(recommendations[1])}>
-            <span>Other option</span>
-            <strong>{recommendations[1].name}</strong>
-            <b>{recommendations[1].baseline.value.toFixed(2)} kg CO₂e</b>
-            <small>{((results.embodied.value - recommendations[1].baseline.value) / results.embodied.value * 100).toFixed(1)}% lower · select to estimate</small>
-          </button>}
-        </section>}
+        {results && mode === "existing" && <Resnet50Recommendations
+          key={results.embodied.processor.name}
+          processorName={results.embodied.processor.name}
+        />}
 
         <div className="assumption-card">
           <span className="eyebrow">MODEL CONTRACT</span>

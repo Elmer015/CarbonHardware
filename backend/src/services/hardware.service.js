@@ -3,7 +3,7 @@ import { AppError } from "../middleware/errorHandler.js";
 
 const columns = ["name", "type", "releaseDate", "processSizeNm", "tdpW", "dieSizeValue", "dieSizeMm2", "vendor", "dies", "avgDieAreaMm2"];
 
-function parseCsvLine(line) {
+export function parseCsvLine(line) {
   const values = [];
   let value = "";
   let quoted = false;

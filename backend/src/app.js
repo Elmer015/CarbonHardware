@@ -5,6 +5,7 @@ import estimateRoutes from "./routes/estimate.routes.js";
 import gridRoutes from "./routes/grid.routes.js";
 import stecRoutes from "./routes/stec.routes.js";
 import comparisonRoutes from "./routes/comparison.routes.js";
+import resnet50BenchmarkRoutes from "./routes/resnet50-benchmark.routes.js";
 import { predictEmbodiedBatch } from "./services/python.service.js";
 import { errorHandler, notFoundHandler } from "./middleware/errorHandler.js";
 
@@ -14,6 +15,7 @@ export function createApp(hardware = [], gridIntensity = [], stecResults = [], d
   app.locals.gridIntensity = gridIntensity;
   app.locals.stecResults = stecResults;
   app.locals.predictEmbodiedBatch = dependencies.predictEmbodiedBatch || predictEmbodiedBatch;
+  app.locals.resnet50Benchmarks = dependencies.resnet50Benchmarks || [];
   app.use(cors());
   app.use(express.json({ limit: "100kb" }));
   app.get("/", (_request, response) => response.json({
@@ -24,6 +26,8 @@ export function createApp(hardware = [], gridIntensity = [], stecResults = [], d
       processors: "GET /api/hardware/processors",
       stecProcessors: "GET /api/stec/processors/options",
       processorComparison: "GET /api/comparison",
+      resnet50Benchmarks: "GET /api/benchmarks/resnet50",
+      resnet50Recommendations: "GET /api/benchmarks/resnet50/recommendations?processorName=...",
       embodiedEstimate: "POST /api/estimates/embodied",
       operationalEnergy: "POST /api/estimates/operational-energy",
       operationalCarbon: "POST /api/estimates/operational-carbon",
@@ -37,6 +41,7 @@ export function createApp(hardware = [], gridIntensity = [], stecResults = [], d
   app.use("/api/grid-intensity", gridRoutes);
   app.use("/api/stec", stecRoutes);
   app.use("/api/comparison", comparisonRoutes);
+  app.use("/api/benchmarks", resnet50BenchmarkRoutes);
   app.use("/api/estimates", estimateRoutes);
   app.use(notFoundHandler);
   app.use(errorHandler);

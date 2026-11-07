@@ -28,6 +28,8 @@ directory.
 - `GET /api/stec/processors/options`
 - `GET /api/stec/processors/:name`
 - `GET /api/comparison`
+- `GET /api/benchmarks/resnet50`
+- `GET /api/benchmarks/resnet50/recommendations?processorName=<CarbonSet product>`
 - `POST /api/estimates/stec`
 - `POST /api/estimates/cci`
 
@@ -62,3 +64,22 @@ embodied-model prediction with its batch STEC result. The endpoint predicts the
 inventory in one Python batch and caches the result for the backend process.
 These values have different lifecycle boundaries and must not be added or
 interpreted as competing predictions for the same target.
+
+`GET /api/benchmarks/resnet50` serves the CarbonSet-mapped rows from
+`data/processed/resnet50-carbonset-benchmark.csv`, derived from the supplied
+MLPerf ResNet50 Offline results and device mapping. It joins each exact
+CarbonSet product to `Emb_Carbon_Mean` and Min/Max values, multiplies these by
+the number of inference devices, and compares them with whole-system MLPerf
+throughput. No power, TDP, operational carbon, or CCI is used. Rows are ranked
+only in cohorts that include at least two CarbonSet products and share the
+suite version, system type, configuration class (MaxQ/non-MaxQ), and input precision.
+Host/server embodied carbon is excluded; results are screening trade-offs,
+not a complete system footprint.
+
+After an existing CarbonSet processor's carbon calculation, the frontend calls
+`GET /api/benchmarks/resnet50/recommendations?processorName=...`. It suggests
+only a different CarbonSet product from the same benchmark cohort whose
+system-level inference-device embodied carbon is no higher and throughput is
+higher than a benchmark system using the selected product. No matching cohort
+or no qualifying candidate is reported explicitly; custom processors do not
+receive benchmark recommendations.

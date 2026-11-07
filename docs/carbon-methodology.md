@@ -102,10 +102,32 @@ The frontend's **Baseline vs STEC** page shows the experimental embodied-model
 prediction and STEC estimate side by side for a selected processor. They have
 different boundaries and are not additive or directly comparable as
 alternative predictions of the same target. The embodied-carbon estimate
-output separately lists up to two same-type CarbonSet processors with lower
-baseline predictions. These are screening candidates only; the current
-inventory does not contain equivalent workload benchmark data to establish
-performance parity or a verified upgrade.
+result also includes ResNet50 screening recommendations after a successful
+calculation for an existing CarbonSet processor; the recommendation uses
+CarbonSet embodied values and MLPerf throughput, not the experimental estimate
+or operational-carbon result.
+
+### ResNet50 benchmark screening
+
+The estimate result uses the 38 CarbonSet-mapped rows in
+`data/processed/resnet50-carbonset-benchmark.csv`. Each benchmark product is
+matched exactly to CarbonSet `Emb_Carbon_Mean` and Min/Max values; the estimate
+is multiplied by the number of inference devices, then displayed alongside
+whole-system MLPerf throughput. The recommendation does not use measured
+power, TDP, operational carbon, or CCI.
+
+Only the 20 results belonging to cohorts with at least two distinct CarbonSet
+products are eligible for comparisons, within the same MLPerf version, system
+type, configuration class (MaxQ/non-MaxQ), and input precision. After a
+successful carbon calculation for an existing processor, the UI compares
+benchmark systems for that product with other products in those cohorts. A
+candidate is shown only when its system inference-device embodied carbon is
+equal or lower and its whole-system throughput is higher than the selected
+product's benchmark system. The other 18 mapped results cannot be used to
+recommend a different product. Host CPU, memory, board, PSU, and chassis
+embodied carbon are excluded. This is a screening comparison, not a single
+combined score, universal winner, or complete server footprint. The API is
+`GET /api/benchmarks/resnet50/recommendations?processorName=...`.
 
 ## Tests
 
