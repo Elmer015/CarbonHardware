@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./HardwareForm.css";
 
-export default function HardwareForm({ form, setForm, mode, setMode, processors, loadingProcessors, processorSearch, setProcessorSearch, onSubmit }) {
+const STEC_PROCESS_NODES = ["3", "5", "7", "7-EUV", "7-EUV-DP", "10", "14", "20", "22", "28"];
+
+export default function HardwareForm({ form, setForm, mode, setMode, processors, loadingProcessors, processorSearch, setProcessorSearch, stecRegions, stecRegionError, onSubmit }) {
   const [showProcessorOptions, setShowProcessorOptions] = useState(false);
   const update = (key) => (event) => setForm({ ...form, [key]: event.target.value });
   const searchTerm = processorSearch.trim().toLowerCase();
@@ -88,6 +90,48 @@ export default function HardwareForm({ form, setForm, mode, setMode, processors,
             <label>Number of dies <span className="unit">count</span><input type="number" min="0" step="1" value={form.dies} onChange={update("dies")} required /></label>
           </div>
           <label>Average die area <span className="unit">mm²</span><input type="number" min="0" step="any" value={form.avgDieArea} onChange={update("avgDieArea")} required /></label>
+          <section className="input-section stec-custom-input-section">
+            <div className="section-heading">
+              <span className="eyebrow">STEC MANUFACTURING INPUTS</span>
+              <span className="step-count">SEPARATE BOUNDARY</span>
+            </div>
+            <p className="form-intro">
+              Usage location and year above are not manufacturing details. Select the STEC node explicitly; it is not inferred from process size. Custom STEC uses the entered die size for one chip and does not infer mixed-node or chiplet layouts.
+            </p>
+            <label>STEC process node
+              <select value={form.stecProcessNodeNm} onChange={update("stecProcessNodeNm")} required>
+                {STEC_PROCESS_NODES.map((node) => <option key={node} value={node}>
+                  {node} nm{node === "22" ? " (20 nm parameter proxy)" : ""}
+                </option>)}
+              </select>
+            </label>
+            <div className="form-grid">
+              <label>Manufacturing region
+                <select
+                  value={stecRegions.includes(form.manufacturingRegion) ? form.manufacturingRegion : ""}
+                  onChange={update("manufacturingRegion")}
+                  required={stecRegions.length > 0}
+                  disabled={!stecRegions.length}
+                >
+                  {stecRegions.length
+                    ? stecRegions.map((region) => <option key={region} value={region}>{region}</option>)
+                    : <option value="">No regions available</option>}
+                </select>
+              </label>
+              <label>Manufacturing year
+                <input
+                  type="number"
+                  min="1990"
+                  max="2025"
+                  step="1"
+                  value={form.manufacturingYear}
+                  onChange={update("manufacturingYear")}
+                  required
+                />
+              </label>
+            </div>
+            {stecRegionError && <p className="stec-inline-error" role="status">{stecRegionError}</p>}
+          </section>
         </>}
       </section>
 
