@@ -104,7 +104,7 @@ export default function Comparison() {
             {selected.stec.warnings && <small className="comparison-warning">{selected.stec.warnings}</small>}
           </article>
         </div>
-        <p className="comparison-boundary-note"><strong>Perhatikan batas sistem:</strong> baseline memprediksi embodied carbon sepanjang lifecycle model, sedangkan STEC hanya mencakup pembuatan die. Keduanya ditampilkan berdampingan, tidak dijumlahkan dan tidak diperlakukan sebagai dua model yang memprediksi target identik.</p>
+        <p className="comparison-boundary-note"><strong>System boundary:</strong> the baseline estimates embodied carbon across the modeled lifecycle, while STEC covers die manufacturing only. They are shown side by side, not added together or treated as two models predicting the same target.</p>
       </>}
     </section>
   </div>;

@@ -17,7 +17,6 @@ export default function App() {
       <NavItem href="/stec" active={path === "/stec"} icon="↗" label="STEC per processor" />
       <NavItem href="/comparison" active={path === "/comparison"} icon="⇄" label="Baseline vs STEC" />
     </nav>
-    <div className="sidebar-note"><span className="status-dot" /> Experimental baseline<p>Prediction follows the five features required by the trained artifact.</p></div><div className="sidebar-footer">Research project · 2026</div>
   </aside><main className="main-content"><Page navigate={navigate} /></main></div>;
 }
 function NavItem({ href, active, icon, label }) { return <a className={`nav-item ${active ? "active" : ""}`} href={href} onClick={(e) => { e.preventDefault(); navigate(href); }}><span className="nav-icon">{icon}</span>{label}</a>; }

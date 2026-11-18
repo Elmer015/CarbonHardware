@@ -1,6 +1,6 @@
 # Architecture Diagram
 
-Diagram berikut menggambarkan implementasi CarbonHardware yang ditemukan pada kode dan konfigurasi workspace. MLPerf benchmark belum terhubung ke alur rekomendasi aplikasi.
+Diagram berikut menggambarkan implementasi CarbonHardware yang ditemukan pada kode dan konfigurasi workspace.
 
 ## Application Architecture
 

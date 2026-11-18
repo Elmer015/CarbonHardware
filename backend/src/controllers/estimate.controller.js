@@ -4,6 +4,8 @@ import { findGridIntensity } from "../services/grid-intensity.service.js";
 import { findHardware } from "../services/hardware.service.js";
 import { calculateStec, predictEmbodied } from "../services/python.service.js";
 import { calculateCci } from "../services/metrics.service.js";
+import { calculateCarbonReplacementComparison } from "../services/carbon-replacement.service.js";
+import { calculateUpgradeTimeline } from "../services/upgrade-timeline.service.js";
 
 function required(value, field) {
   if (value === undefined || value === null || value === "") throw new AppError(400, `${field} is required`);
@@ -42,13 +44,84 @@ export function operationalEnergy(request, response) {
 
 export function operationalCarbon(request, response) {
   const energy = calculateOperationalEnergy(request.body);
+  const annualEnergy = calculateOperationalEnergy({ ...request.body, usageYears: 1 });
   const year = number(request.body.analysisYear, "analysisYear", { integer: true });
   const grid = findGridIntensity(request.app.locals.gridIntensity, required(request.body.region, "region"), year);
+  const annualOperationalCarbon = calculateOperationalCarbon({
+    electricityKwh: annualEnergy.electricityKwh,
+    gridIntensityKgCo2ePerKwh: grid.kgCo2ePerKwh,
+  });
   response.json({
     ...calculateOperationalCarbon({ electricityKwh: energy.electricityKwh, gridIntensityKgCo2ePerKwh: grid.kgCo2ePerKwh }),
     energy,
+    annualOperationalCarbonKgCo2e: annualOperationalCarbon.operationalCarbonKgCo2e,
     gridIntensity: grid,
     analysisYear: year,
+  });
+}
+
+export function carbonReplacementComparison(request, response) {
+  const body = request.body;
+  const analysisYear = number(body.analysisYear, "analysisYear", { integer: true });
+  const grid = findGridIntensity(
+    request.app.locals.gridIntensity,
+    required(body.region, "region"),
+    analysisYear,
+  );
+  const comparison = calculateCarbonReplacementComparison({
+    currentProcessor: {
+      name: required(body.processorName, "processorName"),
+      type: required(body.processorType, "processorType"),
+      tdpW: number(body.tdpW, "tdpW"),
+    },
+    candidates: request.app.locals.hardware,
+    currentReleaseDate: body.currentReleaseDate,
+    hoursPerDay: number(body.hoursPerDay, "hoursPerDay"),
+    utilization: number(body.utilization, "utilization"),
+    daysPerYear: number(body.daysPerYear, "daysPerYear"),
+    gridIntensityKgCo2ePerKwh: grid.kgCo2ePerKwh,
+  });
+  response.json({
+    ...comparison,
+    unit: "years",
+    metadata: comparison.metadata
+      ? { ...comparison.metadata, gridIntensity: grid }
+      : { gridIntensity: grid },
+  });
+}
+
+export function upgradeTimelineEstimate(request, response) {
+  const body = request.body;
+
+  const annualEnergy = calculateOperationalEnergy({
+    tdpW: number(body.tdpW, "tdpW"),
+    hoursPerDay: number(body.hoursPerDay, "hoursPerDay"),
+    usageYears: 1,
+    utilization: number(body.utilization, "utilization"),
+    daysPerYear: number(body.daysPerYear, "daysPerYear"),
+  });
+  const analysisYear = number(body.analysisYear, "analysisYear", { integer: true });
+  const grid = findGridIntensity(request.app.locals.gridIntensity, required(body.region, "region"), analysisYear);
+  const annualOperationalCarbonKgCo2e = calculateOperationalCarbon({
+    electricityKwh: annualEnergy.electricityKwh,
+    gridIntensityKgCo2ePerKwh: grid.kgCo2ePerKwh,
+  }).operationalCarbonKgCo2e;
+  const timeline = calculateUpgradeTimeline({
+    carbonBudgetKgCo2e: number(body.carbonBudgetKgCo2e, "carbonBudgetKgCo2e"),
+    embodiedCarbonKgCo2e: number(body.embodiedCarbonKgCo2e, "embodiedCarbonKgCo2e"),
+    annualOperationalCarbonKgCo2e,
+    usageYears: number(body.usageYears, "usageYears"),
+  });
+
+  response.json({
+    ...timeline,
+    carbonBudgetKgCo2e: number(body.carbonBudgetKgCo2e, "carbonBudgetKgCo2e"),
+    unit: "years",
+    metadata: {
+      method: "time until the user-provided cumulative carbon budget under the submitted annual-use scenario",
+      interpretation: "This is the estimated time until the chosen carbon budget is reached, not a validated hardware-failure or performance-based upgrade prediction.",
+      gridIntensity: grid,
+    },
   });
 }
 

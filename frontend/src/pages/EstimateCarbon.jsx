@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import HardwareForm from "../components/HardwareForm";
-import Resnet50Recommendations from "../components/Resnet50Recommendations";
+import CarbonReplacementComparison from "../components/CarbonReplacementComparison";
+import "./EstimateCarbon.css";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
@@ -12,8 +13,10 @@ export default function EstimateCarbon() {
   const [submitted, setSubmitted] = useState(false);
   const [results, setResults] = useState(null);
   const [error, setError] = useState("");
+  const [replacementError, setReplacementError] = useState("");
   const [form, setForm] = useState({
     name: "",
+    processorType: "CPU",
     processSize: "",
     tdp: "",
     dieSize: "",
@@ -39,6 +42,8 @@ export default function EstimateCarbon() {
       .then((items) => {
         setProcessors(items.map((item) => ({
           name: item.name,
+          processorType: item.type,
+          releaseDate: item.releaseDate,
           vendor: item.vendor,
           processSize: item.processSizeNm,
           tdp: item.tdpW,
@@ -59,12 +64,14 @@ export default function EstimateCarbon() {
   async function calculate(event) {
     event.preventDefault();
     setError("");
+    setReplacementError("");
     setSubmitted(true);
     const hardwarePayload = mode === "existing"
       ? { inputMode: "existing", processorName: form.name }
       : {
         inputMode: "custom",
         processorName: form.name,
+        processorType: form.processorType,
         processSizeNm: Number(form.processSize),
         tdpW: Number(form.tdp),
         dieSizeMm2: Number(form.dieSize),
@@ -117,7 +124,33 @@ export default function EstimateCarbon() {
         throw new Error((await cciResponse.json()).error || "CCI calculation failed");
       }
       const cci = await cciResponse.json();
-      setResults({ embodied, energy: operational.energy, operational, cci });
+      let replacementComparison = null;
+      try {
+        const comparisonResponse = await fetch(`${API_URL}/api/estimates/carbon-replacement-comparison`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            processorName: form.name,
+            processorType: form.processorType,
+            currentReleaseDate: mode === "existing"
+              ? processors.find((processor) => processor.name === form.name)?.releaseDate
+              : undefined,
+            tdpW: Number(form.tdp),
+            hoursPerDay: Number(form.hoursPerDay),
+            utilization: Number(form.utilizationPercent) / 100,
+            daysPerYear: Number(form.daysPerYear),
+            region: form.region,
+            analysisYear: Number(form.analysisYear),
+          }),
+        });
+        if (!comparisonResponse.ok) {
+          throw new Error((await comparisonResponse.json()).error || "Carbon replacement comparison could not be calculated");
+        }
+        replacementComparison = await comparisonResponse.json();
+      } catch (comparisonError) {
+        setReplacementError(comparisonError.message);
+      }
+      setResults({ embodied, energy: operational.energy, operational, cci, replacementComparison });
     } catch (requestError) {
       setError(requestError.message);
       setResults(null);
@@ -129,7 +162,7 @@ export default function EstimateCarbon() {
       <div>
         <span className="eyebrow">CARBON HARDWARE / EMBODIED MODEL</span>
         <h1>Estimate processor carbon.</h1>
-        <p className="lede">Choose known hardware or switch to custom input, then define its operational usage scenario.</p>
+        <p className="lede">Choose known hardware or enter custom specifications, then describe its usage history and current operating pattern.</p>
       </div>
       <span className="page-number">01</span>
     </header>
@@ -156,26 +189,20 @@ export default function EstimateCarbon() {
             : "Submit the processor and usage scenario to calculate embodied carbon, operational carbon, energy, and CCI.")}</p>
           {results && <div className="result-meta">
             <span>Embodied<strong>{results.embodied.value.toFixed(2)} {results.embodied.unit}</strong></span>
-            <span>Operational<strong>{results.operational.operationalCarbonKgCo2e.toFixed(2)} kg CO₂e</strong></span>
+            <span>Operational ({form.usageYears} years)<strong>{results.operational.operationalCarbonKgCo2e.toFixed(2)} kg CO₂e</strong></span>
+            <span>Operational / year<strong>{results.operational.annualOperationalCarbonKgCo2e.toFixed(2)} kg CO₂e</strong></span>
             <span>Energy<strong>{results.energy.electricityKwh.toFixed(2)} kWh</strong></span>
             {results.cci && <span>CCI<strong>{results.cci.cciKgCo2ePerWorkload.toFixed(4)} kg/workload</strong></span>}
           </div>}
         </div>
 
-        {results && mode === "existing" && <Resnet50Recommendations
-          key={results.embodied.processor.name}
-          processorName={results.embodied.processor.name}
-        />}
+        {results && <CarbonReplacementComparison comparison={results.replacementComparison} error={replacementError} />}
 
         <div className="assumption-card">
           <span className="eyebrow">MODEL CONTRACT</span>
           <h3>Carbon metrics</h3>
           <p>Embodied carbon is an experimental model prediction. Operational carbon uses the selected lifecycle grid intensity for {form.region} in {form.analysisYear}.</p>
           {results && <p className="warning-copy">Grid source: {results.operational.gridIntensity.metadata.source}; factor: {results.operational.gridIntensity.gramsCo2ePerKwh.toFixed(2)} gCO₂e/kWh.</p>}
-        </div>
-        <div className="feature-note">
-          <span className="eyebrow">CCI DEFINITION</span>
-          <p>CCI unit: <strong>kg CO₂e per {form.workloadUnit}</strong>. CCI includes embodied plus operational carbon.</p>
         </div>
       </section>
     </div>

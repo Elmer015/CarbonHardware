@@ -1,7 +1,13 @@
 import fs from "node:fs/promises";
 import { AppError } from "../middleware/errorHandler.js";
 
-const columns = ["name", "type", "releaseDate", "processSizeNm", "tdpW", "dieSizeValue", "dieSizeMm2", "vendor", "dies", "avgDieAreaMm2"];
+const columns = [
+  "name", "type", "releaseDate", "processSizeNm", "tdpW", "dieSizeValue", "dieSizeMm2",
+  "vendor", "dies", "avgDieAreaMm2", "embodiedCarbonMinKgCo2e", "operationalCarbonMinKgCo2e",
+  "totalCarbonMinKgCo2e", "embodiedCarbonMaxKgCo2e", "operationalCarbonMaxKgCo2e",
+  "totalCarbonMaxKgCo2e", "embodiedCarbonMeanKgCo2e", "operationalCarbonMeanKgCo2e",
+  "totalCarbonMeanKgCo2e",
+];
 
 export function parseCsvLine(line) {
   const values = [];
@@ -30,6 +36,12 @@ function toHardware(values) {
     processSizeNm: numeric(row.processSizeNm, "Process Size (nm)"), tdpW: numeric(row.tdpW, "TDP (W)"),
     dieSizeValue: numeric(row.dieSizeValue, "DieSizeValue"), dieSizeMm2: row.dieSizeMm2, vendor: row.vendor,
     dies: numeric(row.dies, "#dies"), avgDieAreaMm2: numeric(row.avgDieAreaMm2, "Avg Die Area"),
+    embodiedCarbonMinKgCo2e: numeric(row.embodiedCarbonMinKgCo2e, "Emb_Carbon_Min"),
+    embodiedCarbonMeanKgCo2e: numeric(row.embodiedCarbonMeanKgCo2e, "Emb_Carbon_Mean"),
+    embodiedCarbonMaxKgCo2e: numeric(row.embodiedCarbonMaxKgCo2e, "Emb_Carbon_Max"),
+    totalCarbonMinKgCo2e: numeric(row.totalCarbonMinKgCo2e, "Tot_Carbon_Min"),
+    totalCarbonMaxKgCo2e: numeric(row.totalCarbonMaxKgCo2e, "Tot_Carbon_Max"),
+    totalCarbonMeanKgCo2e: numeric(row.totalCarbonMeanKgCo2e, "Tot_Carbon_Mean"),
   };
 }
 

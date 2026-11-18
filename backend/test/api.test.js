@@ -53,6 +53,8 @@ test("hardware and metric endpoints validate requests", async () => {
     const processorList = await processors.json();
     assert.equal(processorList.length, 1);
     assert.equal("carbonSet" in processorList[0], false);
+    assert.equal("embodiedCarbonMeanKgCo2e" in processorList[0], false);
+    assert.equal("totalCarbonMinKgCo2e" in processorList[0], false);
 
     const grid = await fetch(`${url}/api/grid-intensity?region=Indonesia&year=2020`);
     assert.equal(grid.status, 200);
@@ -121,6 +123,11 @@ test("hardware and metric endpoints validate requests", async () => {
     });
     assert.equal(invalid.status, 400);
 
+    for (const endpoint of ["/api/benchmarks/resnet50", "/api/benchmarks/resnet50/recommendations"]) {
+      const response = await fetch(`${url}${endpoint}`);
+      assert.equal(response.status, 404);
+    }
+
     const operationalCarbon = await fetch(`${url}/api/estimates/operational-carbon`, {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -138,6 +145,7 @@ test("hardware and metric endpoints validate requests", async () => {
     const operationalResult = await operationalCarbon.json();
     assert.equal(operationalResult.energy.electricityKwh, 1839.6);
     assert.equal(operationalResult.operationalCarbonKgCo2e, 1260.40194);
+    assert.ok(Math.abs(operationalResult.annualOperationalCarbonKgCo2e - 252.080388) < 1e-10);
 
     const unavailable = await fetch(`${url}/api/estimates/operational-carbon`, {
       method: "POST",

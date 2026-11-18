@@ -22,14 +22,14 @@ directory.
 - `POST /api/estimates/embodied`
 - `POST /api/estimates/operational-energy`
 - `POST /api/estimates/operational-carbon`
+- `POST /api/estimates/carbon-replacement-comparison`
+- `POST /api/estimates/upgrade-timeline`
 - `GET /api/grid-intensity?region=Indonesia&year=2020`
 - `GET /api/grid-intensity/regions`
 - `GET /api/stec/processors?type=CPU&status=point&page=1&pageSize=50`
 - `GET /api/stec/processors/options`
 - `GET /api/stec/processors/:name`
 - `GET /api/comparison`
-- `GET /api/benchmarks/resnet50`
-- `GET /api/benchmarks/resnet50/recommendations?processorName=<CarbonSet product>`
 - `POST /api/estimates/stec`
 - `POST /api/estimates/cci`
 
@@ -37,7 +37,20 @@ directory.
 region/year lookup from the OWID/Ember lifecycle snapshot at
 `data/raw/environmental/owid-lifecycle-carbon-intensity.csv`, converts
 gCO2e/kWh to kgCO2e/kWh, and returns provenance metadata. Missing region/year
-data returns `404`; there is no silent fallback.
+data returns `404`; there is no silent fallback. The response includes both
+operational carbon for the submitted usage duration and the same scenario's
+annual operational-carbon estimate.
+`carbon-replacement-comparison` returns up to three same-type CarbonSet
+candidates released after the current processor and within the latest five
+release years represented in CarbonSet. Their TDP must be from 50% to below
+100% of the current TDP, and they are ranked by estimated carbon payback. It
+compares each candidate's `Emb_Carbon_Mean` with annual operational-carbon
+savings under the submitted usage and grid scenario. The recency window and TDP
+band are provisional screening rules, not evidence of equivalent performance.
+The comparison assumes equivalent workload, does not evaluate performance, and
+excludes end-of-life carbon; TDP is only a power proxy. `upgrade-timeline` remains available for
+direct callers who need the time until a user-provided carbon budget is reached,
+but the estimate UI no longer uses that endpoint.
 `stec` delegates to `ml-engine/carbon/stec.py` and returns location-based,
 cradle-to-gate die STEC with its assumptions.
 The server recomputes the CarbonSet STEC inventory at startup using
@@ -65,21 +78,7 @@ inventory in one Python batch and caches the result for the backend process.
 These values have different lifecycle boundaries and must not be added or
 interpreted as competing predictions for the same target.
 
-`GET /api/benchmarks/resnet50` serves the CarbonSet-mapped rows from
-`data/processed/resnet50-carbonset-benchmark.csv`, derived from the supplied
-MLPerf ResNet50 Offline results and device mapping. It joins each exact
-CarbonSet product to `Emb_Carbon_Mean` and Min/Max values, multiplies these by
-the number of inference devices, and compares them with whole-system MLPerf
-throughput. No power, TDP, operational carbon, or CCI is used. Rows are ranked
-only in cohorts that include at least two CarbonSet products and share the
-suite version, system type, configuration class (MaxQ/non-MaxQ), and input precision.
-Host/server embodied carbon is excluded; results are screening trade-offs,
-not a complete system footprint.
-
-After an existing CarbonSet processor's carbon calculation, the frontend calls
-`GET /api/benchmarks/resnet50/recommendations?processorName=...`. It suggests
-only a different CarbonSet product from the same benchmark cohort whose
-system-level inference-device embodied carbon is no higher and throughput is
-higher than a benchmark system using the selected product. No matching cohort
-or no qualifying candidate is reported explicitly; custom processors do not
-receive benchmark recommendations.
+The estimate frontend displays a carbon-only comparison with automatically
+selected same-type CarbonSet candidates. It estimates carbon payback under the
+submitted usage and grid scenario; it does not verify equivalent workload or
+recommend a universally suitable replacement.
